@@ -1,0 +1,86 @@
+---
+const navLinks = [
+  { href: '#o-mnie', label: 'O mnie' },
+  { href: '#osiagniecia', label: 'Osiągnięcia' },
+  { href: '#umiejetnosci', label: 'Umiejętności' },
+  { href: '#projekty', label: 'Projekty' },
+  { href: '#doswiadczenie', label: 'Doświadczenie' },
+  { href: '#certyfikaty', label: 'Certyfikaty' },
+  { href: '#kontakt', label: 'Kontakt' },
+];
+---
+
+<nav
+  id="navbar"
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-primary/80 backdrop-blur-md border-b border-gray-800/50"
+>
+  <div class="max-w-6xl mx-auto px-4 flex items-center justify-between h-16">
+    <a href="/ds_ai_portfolio/" class="text-xl font-bold text-white hover:text-accent transition-colors">
+      GC<span class="text-accent">.</span>
+    </a>
+
+    <!-- Desktop -->
+    <ul class="hidden md:flex items-center gap-6">
+      {navLinks.map((link) => (
+        <li>
+          <a
+            href={link.href}
+            class="text-sm text-gray-400 hover:text-white transition-colors"
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <!-- Mobile toggle -->
+    <button
+      id="menu-toggle"
+      class="md:hidden p-2 text-gray-400 hover:text-white transition-colors"
+      aria-label="Otwórz menu"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-primary/95 backdrop-blur-md border-b border-gray-800">
+    <ul class="flex flex-col items-center gap-4 py-6">
+      {navLinks.map((link) => (
+        <li>
+          <a
+            href={link.href}
+            class="mobile-link text-gray-400 hover:text-white transition-colors"
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</nav>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+
+  toggle?.addEventListener('click', () => {
+    const isOpen = !menu?.classList.contains('hidden');
+    menu?.classList.toggle('hidden');
+    if (isOpen) {
+      menuIcon?.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+    } else {
+      menuIcon?.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+    }
+  });
+
+  document.querySelectorAll('.mobile-link').forEach((link) => {
+    link.addEventListener('click', () => {
+      menu?.classList.add('hidden');
+      menuIcon?.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+    });
+  });
+</script>

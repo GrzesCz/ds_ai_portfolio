@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Achievements from '../components/Achievements.astro';
+import Skills from '../components/Skills.astro';
+import Projects from '../components/Projects.astro';
+import Experience from '../components/Experience.astro';
+import Certificates from '../components/Certificates.astro';
+import Contact from '../components/Contact.astro';
+---
+
+<BaseLayout title="Grzegorz Czopiński | Data Scientist & AI Engineer">
+  <Navbar />
+  <main>
+    <Hero />
+    <About />
+    <Achievements />
+    <Skills />
+    <Projects />
+    <Experience />
+    <Certificates />
+    <Contact />
+  </main>
+
+  <footer class="border-t border-gray-800 py-8 text-center text-gray-500 text-sm">
+    <div class="max-w-6xl mx-auto px-4">
+      <p>&copy; {new Date().getFullYear()} Grzegorz Czopiński. Wszystkie prawa zastrzeżone.</p>
+    </div>
+  </footer>
+</BaseLayout>

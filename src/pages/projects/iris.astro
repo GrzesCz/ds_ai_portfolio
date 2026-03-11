@@ -1,0 +1,130 @@
+---
+import ProjectLayout from '../../layouts/ProjectLayout.astro';
+
+const findings = [
+  {
+    title: 'Separowalność Iris setosa',
+    description: 'Gatunek Iris setosa jest wyraźnie oddzielony od pozostałych dwóch gatunków na podstawie długości i szerokości płatka.',
+    icon: '🔍',
+  },
+  {
+    title: 'Korelacja cech',
+    description: 'Długość i szerokość płatka wykazują silną dodatnią korelację (r > 0.9), co sugeruje redundancję w kontekście klasyfikacji.',
+    icon: '📊',
+  },
+  {
+    title: 'Iris versicolor vs virginica',
+    description: 'Te dwa gatunki częściowo nachodzą na siebie w przestrzeni cech, co stanowi wyzwanie klasyfikacyjne.',
+    icon: '🎯',
+  },
+  {
+    title: 'Wymiary płatka jako predyktory',
+    description: 'Cechy płatka (petal) mają znacznie wyższą moc dyskryminacyjną niż cechy działki kielichowej (sepal).',
+    icon: '💡',
+  },
+];
+---
+
+<ProjectLayout
+  title="Analiza EDA Irysów"
+  description="Eksploracyjna analiza danych zbioru Iris z wizualizacjami i wnioskami domenowymi."
+>
+  <div class="max-w-6xl mx-auto px-4 py-12">
+    <!-- Breadcrumb -->
+    <nav class="mb-8 text-sm" aria-label="Breadcrumb">
+      <ol class="flex items-center gap-2 text-gray-500">
+        <li><a href="/ds_ai_portfolio/" class="hover:text-accent transition-colors">Strona główna</a></li>
+        <li>/</li>
+        <li><a href="/ds_ai_portfolio/#projekty" class="hover:text-accent transition-colors">Projekty</a></li>
+        <li>/</li>
+        <li class="text-gray-300">Analiza EDA Irysów</li>
+      </ol>
+    </nav>
+
+    <!-- Header -->
+    <div class="mb-12">
+      <h1 class="text-4xl font-extrabold text-white mb-4">Analiza EDA Irysów</h1>
+      <p class="text-gray-400 text-lg max-w-3xl mb-6">
+        Eksploracyjna analiza danych (Exploratory Data Analysis) klasycznego zbioru Iris.
+        Analiza obejmuje statystyki opisowe, wizualizacje rozkładów, korelacje między cechami
+        oraz wnioski klasyfikacyjne.
+      </p>
+      <div class="flex flex-wrap gap-2">
+        {['Python', 'Pandas', 'Matplotlib', 'Seaborn', 'Jupyter'].map((tag) => (
+          <span class="px-3 py-1 text-xs bg-accent/10 text-accent-light rounded-md border border-accent/20">
+            {tag}
+          </span>
+        ))}
+      </div>
+    </div>
+
+    <!-- Key Findings -->
+    <div class="mb-12">
+      <h2 class="text-2xl font-bold text-white mb-6">Kluczowe wnioski</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        {findings.map((finding) => (
+          <div class="bg-card border border-gray-800 rounded-xl p-5 hover:border-accent/30 transition-colors">
+            <div class="flex items-start gap-3">
+              <span class="text-2xl flex-shrink-0">{finding.icon}</span>
+              <div>
+                <h3 class="text-white font-semibold mb-1">{finding.title}</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">{finding.description}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Notebook embed -->
+    <div class="mb-8">
+      <h2 class="text-2xl font-bold text-white mb-6">Notebook</h2>
+      <div class="bg-card border border-gray-800 rounded-xl overflow-hidden">
+        <iframe
+          id="notebook-frame"
+          src="/ds_ai_portfolio/projects/iris/iris.html"
+          class="w-full border-0"
+          style="min-height: 800px"
+          title="Iris EDA Notebook"
+        ></iframe>
+      </div>
+    </div>
+
+    <!-- Download -->
+    <div class="flex flex-col sm:flex-row gap-4 items-start">
+      <a
+        href="/ds_ai_portfolio/projects/iris/iris.ipynb"
+        download
+        class="inline-flex items-center gap-2 px-6 py-3 bg-accent hover:bg-accent-dark text-white font-semibold rounded-lg transition-all duration-300"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        </svg>
+        Pobierz notebook (.ipynb)
+      </a>
+
+      <a
+        href="/ds_ai_portfolio/#projekty"
+        class="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
+      >
+        ← Wróć do projektów
+      </a>
+    </div>
+  </div>
+
+  <script>
+    const iframe = document.getElementById('notebook-frame') as HTMLIFrameElement;
+    if (iframe) {
+      iframe.addEventListener('load', () => {
+        try {
+          const body = iframe.contentDocument?.body;
+          if (body) {
+            iframe.style.height = body.scrollHeight + 40 + 'px';
+          }
+        } catch {
+          iframe.style.height = '1200px';
+        }
+      });
+    }
+  </script>
+</ProjectLayout>
