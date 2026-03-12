@@ -1,0 +1,169 @@
+---
+import ProjectLayout from '../../layouts/ProjectLayout.astro';
+
+const metrics = [
+  { value: 'SSG', label: 'statyczne generowanie (Astro)', icon: '🚀' },
+  { value: 'Typy', label: 'pełne bezpieczeństwo (TS)', icon: '🛡️' },
+  { value: 'UI', label: 'Tailwind CSS', icon: '🎨' },
+  { value: 'R&D', label: 'faza rozwoju', icon: '🏗️' },
+];
+
+const challenges = [
+  {
+    title: 'Założenia projektu',
+    description: 'Głównym celem jest stworzenie bardzo szybkiej aplikacji edukacyjnej, która pomoże użytkownikom w efektywnej nauce dzięki wdrożeniu mechanizmu powtórek w odstępach (Spaced Repetition). Projekt służy mi także jako pole do eksperymentów z architekturą statycznego generowania (SSG) w ekosystemie Astro.',
+    icon: '🎯',
+  },
+  {
+    title: 'Obecny etap',
+    description: 'Aplikacja jest w fazie początkowej. Skupiam się na zbudowaniu solidnej bazy frontendowej: pisaniu reużywalnych komponentów, dodawaniu stylów (Tailwind CSS) i wprowadzaniu ścisłego typowania za pomocą TypeScript.',
+    icon: '🛠️',
+  },
+];
+
+const features = [
+  'Przeglądanie i nauka z wykorzystaniem interaktywnych wirtualnych fiszek',
+  'Wbudowany algorytm optymalizacji powtórek (Spaced Repetition)',
+  'Ekstremalna szybkość ładowania dzięki frameworkowi Astro',
+  'Nowoczesny, w pełni responsywny interfejs z obsługą ciemnego motywu (Dark Mode)',
+];
+
+const techDetails = [
+  { name: 'Framework', value: 'Astro' },
+  { name: 'Język', value: 'TypeScript' },
+  { name: 'Style', value: 'Tailwind CSS' },
+  { name: 'Stan', value: 'Nano Stores / LocalStorage (wczesna faza)' },
+  { name: 'Status', value: 'W warsztacie (R&D)' },
+];
+
+const roles = [
+  'Projektowanie interfejsu użytkownika z myślą o wygodzie, minimalizmie i dostępności',
+  'Implementacja logiki aplikacji oraz algorytmu powtórek w TypeScript',
+  'Zarządzanie stanem aplikacji na frontendzie (Nano Stores) i lokalnym przechowywaniem danych',
+  'Optymalizacja wydajności strony (tzw. architektura Islands w Astro)',
+];
+---
+
+<ProjectLayout
+  title="System Fiszek Edukacyjnych — Laboratorium Innowacji"
+  description="Platforma webowa do nauki z wykorzystaniem fiszek i algorytmu Spaced Repetition. Budowana w Astro i TypeScript."
+>
+  <div class="max-w-6xl mx-auto px-4 py-12">
+    <!-- Breadcrumb -->
+    <nav class="mb-8 text-sm" aria-label="Breadcrumb">
+      <ol class="flex items-center gap-2 text-gray-500">
+        <li><a href="/ds_ai_portfolio/" class="hover:text-purple-400 transition-colors">Strona główna</a></li>
+        <li>/</li>
+        <li><a href="/ds_ai_portfolio/#laboratorium" class="hover:text-purple-400 transition-colors">Laboratorium</a></li>
+        <li>/</li>
+        <li class="text-gray-300">System Fiszek Edukacyjnych</li>
+      </ol>
+    </nav>
+
+    <!-- Header -->
+    <div class="mb-12">
+      <div class="inline-block bg-purple-600 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider mb-4 shadow-lg shadow-purple-600/30">
+        W warsztacie (R&D)
+      </div>
+      <h1 class="text-4xl lg:text-5xl font-extrabold text-white mb-4">System Fiszek Edukacyjnych</h1>
+      <p class="text-gray-400 text-lg max-w-3xl mb-6">
+        Interaktywna platforma webowa zaprojektowana do optymalizacji procesu nauki. 
+        Projekt powstał jako miejsce do eksperymentowania z frameworkiem Astro i budowania niesamowicie szybkich interfejsów w TypeScript.
+      </p>
+      <div class="flex flex-wrap gap-2">
+        {['Astro', 'TypeScript', 'Tailwind CSS'].map((tag) => (
+          <span class="px-3 py-1 text-xs bg-purple-500/10 text-purple-400 rounded-md border border-purple-500/20">
+            {tag}
+          </span>
+        ))}
+      </div>
+    </div>
+
+    <!-- Metrics -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-5 mb-16">
+      {metrics.map((m) => (
+        <div class="bg-card border border-gray-800 rounded-xl p-5 text-center">
+          <div class="text-3xl mb-2">{m.icon}</div>
+          <div class="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-200">
+            {m.value}
+          </div>
+          <p class="text-gray-400 text-sm mt-1">{m.label}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Problem / Solution / Result -->
+    <div class="mb-16">
+      <h2 class="text-2xl font-bold text-white mb-6">O projekcie</h2>
+      <div class="space-y-6">
+        {challenges.map((c) => (
+          <div class="bg-card border border-gray-800 rounded-xl p-6">
+            <div class="flex items-start gap-4">
+              <span class="text-2xl flex-shrink-0">{c.icon}</span>
+              <div>
+                <h3 class="text-white font-bold text-lg mb-2">{c.title}</h3>
+                <p class="text-gray-400 leading-relaxed">{c.description}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Features -->
+    <div class="mb-16">
+      <h2 class="text-2xl font-bold text-white mb-6">Planowane funkcjonalności</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {features.map((f) => (
+          <div class="flex items-start gap-3 bg-card border border-gray-800 rounded-lg p-4">
+            <span class="text-purple-400 mt-0.5 flex-shrink-0">▸</span>
+            <span class="text-gray-300 text-sm">{f}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Tech Details -->
+    <div class="mb-16">
+      <h2 class="text-2xl font-bold text-white mb-6">Stack technologiczny</h2>
+      <div class="bg-card border border-gray-800 rounded-xl overflow-hidden">
+        <table class="w-full text-sm">
+          {techDetails.map((t, i) => (
+            <tr class={i % 2 === 0 ? 'bg-card' : 'bg-primary/30'}>
+              <td class="px-6 py-3 text-gray-500 font-medium w-1/3">{t.name}</td>
+              <td class="px-6 py-3 text-gray-300">{t.value}</td>
+            </tr>
+          ))}
+        </table>
+      </div>
+    </div>
+
+    <!-- My Role -->
+    <div class="mb-16">
+      <h2 class="text-2xl font-bold text-white mb-6">Moja rola w laboratorium</h2>
+      <div class="bg-card border border-gray-800 rounded-xl p-6">
+        <p class="text-gray-400 leading-relaxed mb-4">
+          Projekt ten traktuję jako pole badawcze do eksperymentowania z nowymi technologiami i architekturami:
+        </p>
+        <ul class="space-y-3">
+          {roles.map((r) => (
+            <li class="text-gray-300 flex items-start gap-3">
+              <span class="text-purple-400 mt-1 flex-shrink-0">✓</span>
+              <span>{r}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <!-- Back -->
+    <div class="flex gap-4 items-start">
+      <a
+        href="/ds_ai_portfolio/#laboratorium"
+        class="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
+      >
+        ← Wróć do sekcji Laboratorium
+      </a>
+    </div>
+  </div>
+</ProjectLayout>

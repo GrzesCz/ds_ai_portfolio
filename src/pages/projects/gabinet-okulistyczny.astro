@@ -1,0 +1,177 @@
+---
+import ProjectLayout from '../../layouts/ProjectLayout.astro';
+
+const metrics = [
+  { value: '100%', label: 'cyfrowych kart medycznych', icon: '📄' },
+  { value: 'Auto', label: 'rozliczenia wizyt', icon: '💳' },
+  { value: '0', label: 'zgubionych danych', icon: '🔒' },
+  { value: 'On-prem', label: 'bezpieczeństwo danych', icon: '🛡️' },
+];
+
+const challenges = [
+  {
+    title: 'Problem',
+    description: 'Prowadzenie dokumentacji medycznej i zarządzanie kalendarzem wizyt w tradycyjnej (papierowej) formie było mało wydajne, obarczone ryzykiem błędów i znacząco utrudniało bieżące rozliczenia finansowe gabinetu.',
+    icon: '🔴',
+  },
+  {
+    title: 'Rozwiązanie',
+    description: 'Zaprojektowanie od zera i wdrożenie dedykowanego systemu typu CRM. Aby zapewnić najwyższy poziom poufności i bezpieczeństwa danych wrażliwych pacjentów, aplikacja została wdrożona w środowisku izolowanym (prywatny serwer).',
+    icon: '🟢',
+  },
+  {
+    title: 'Rezultat',
+    description: 'Udana i pełna cyfryzacja pracy gabinetu. Lekarze zyskali natychmiastowy i bezpieczny dostęp do historii chorób pacjentów, a proces rozliczeń i fakturowania wizyt został w pełni zautomatyzowany.',
+    icon: '🏆',
+  },
+];
+
+const features = [
+  'Zarządzanie terminarzem wizyt i zaawansowany moduł rejestracji pacjentów',
+  'Elektroniczne prowadzenie szczegółowej dokumentacji medycznej (e-Karta)',
+  'Zautomatyzowane rozliczanie odbytych wizyt lekarskich',
+  'Wbudowane narzędzia do analizy danych operacyjnych z gabinetu',
+  'Restrykcyjny system dostępu i zachowanie zgodności z RODO',
+];
+
+const techDetails = [
+  { name: 'Język backendu', value: 'PHP' },
+  { name: 'Baza danych', value: 'MySQL' },
+  { name: 'Frontend', value: 'Bootstrap, CSS, JavaScript' },
+  { name: 'Wdrożenie', value: 'Prywatny serwer (on-premise)' },
+  { name: 'Status', value: 'Produkcja' },
+];
+
+const roles = [
+  'Zaprojektowanie struktury i logiki relacyjnej bazy danych (MySQL)',
+  'Implementacja kluczowych modułów biznesowych: rejestracji pacjentów, dokumentacji medycznej (e-Karta), systemu rozliczeń',
+  'Stworzenie systemu automatycznych powiadomień mailowych (CRON/harmonogramowanie)',
+  'Zaprojektowanie responsywnego frontendu aplikacji',
+  'Skonfigurowanie i wdrożenie gotowego systemu na prywatnym serwerze klienta (on-premise)',
+];
+---
+
+<ProjectLayout
+  title="Gabinet Okulistyczny — Case Study"
+  description="Aplikacja webowa do rejestracji pacjentów, prowadzenia dokumentacji i rozliczania wizyt medycznych."
+>
+  <div class="max-w-6xl mx-auto px-4 py-12">
+    <!-- Breadcrumb -->
+    <nav class="mb-8 text-sm" aria-label="Breadcrumb">
+      <ol class="flex items-center gap-2 text-gray-500">
+        <li><a href="/ds_ai_portfolio/" class="hover:text-accent transition-colors">Strona główna</a></li>
+        <li>/</li>
+        <li><a href="/ds_ai_portfolio/#projekty" class="hover:text-accent transition-colors">Projekty</a></li>
+        <li>/</li>
+        <li class="text-gray-300">Gabinet okulistyczny</li>
+      </ol>
+    </nav>
+
+    <!-- Header -->
+    <div class="mb-12">
+      <div class="inline-block bg-blue-500 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider mb-4 shadow-lg shadow-blue-500/30">
+        Produkcja
+      </div>
+      <h1 class="text-4xl lg:text-5xl font-extrabold text-white mb-4">System dla Gabinetu Okulistycznego</h1>
+      <p class="text-gray-400 text-lg max-w-3xl mb-6">
+        Dedykowana aplikacja webowa zaprojektowana w celu kompletnej cyfryzacji 
+        pracy placówki medycznej. Gwarantuje bezpieczne zarządzanie dokumentacją 
+        pacjentów oraz zautomatyzowaną obsługę finansową.
+      </p>
+      <div class="flex flex-wrap gap-2">
+        {['PHP', 'MySQL', 'Bootstrap', 'CSS', 'JavaScript', 'Analiza danych'].map((tag) => (
+          <span class="px-3 py-1 text-xs bg-accent/10 text-accent-light rounded-md border border-accent/20">
+            {tag}
+          </span>
+        ))}
+      </div>
+    </div>
+
+    <!-- Metrics -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-5 mb-16">
+      {metrics.map((m) => (
+        <div class="bg-card border border-gray-800 rounded-xl p-5 text-center">
+          <div class="text-3xl mb-2">{m.icon}</div>
+          <div class="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-light">
+            {m.value}
+          </div>
+          <p class="text-gray-400 text-sm mt-1">{m.label}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Problem / Solution / Result -->
+    <div class="mb-16">
+      <h2 class="text-2xl font-bold text-white mb-6">Od problemu do rozwiązania</h2>
+      <div class="space-y-6">
+        {challenges.map((c) => (
+          <div class="bg-card border border-gray-800 rounded-xl p-6">
+            <div class="flex items-start gap-4">
+              <span class="text-2xl flex-shrink-0">{c.icon}</span>
+              <div>
+                <h3 class="text-white font-bold text-lg mb-2">{c.title}</h3>
+                <p class="text-gray-400 leading-relaxed">{c.description}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Features -->
+    <div class="mb-16">
+      <h2 class="text-2xl font-bold text-white mb-6">Kluczowe funkcjonalności</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {features.map((f) => (
+          <div class="flex items-start gap-3 bg-card border border-gray-800 rounded-lg p-4">
+            <span class="text-accent mt-0.5 flex-shrink-0">▸</span>
+            <span class="text-gray-300 text-sm">{f}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Tech Details -->
+    <div class="mb-16">
+      <h2 class="text-2xl font-bold text-white mb-6">Stack technologiczny</h2>
+      <div class="bg-card border border-gray-800 rounded-xl overflow-hidden">
+        <table class="w-full text-sm">
+          {techDetails.map((t, i) => (
+            <tr class={i % 2 === 0 ? 'bg-card' : 'bg-primary/30'}>
+              <td class="px-6 py-3 text-gray-500 font-medium w-1/3">{t.name}</td>
+              <td class="px-6 py-3 text-gray-300">{t.value}</td>
+            </tr>
+          ))}
+        </table>
+      </div>
+    </div>
+
+    <!-- My Role -->
+    <div class="mb-16">
+      <h2 class="text-2xl font-bold text-white mb-6">Moja rola</h2>
+      <div class="bg-card border border-gray-800 rounded-xl p-6">
+        <p class="text-gray-400 leading-relaxed mb-4">
+          Odpowiadałem kompleksowo za realizację całego projektu od strony biznesowej i technologicznej:
+        </p>
+        <ul class="space-y-3">
+          {roles.map((r) => (
+            <li class="text-gray-300 flex items-start gap-3">
+              <span class="text-emerald mt-1 flex-shrink-0">✓</span>
+              <span>{r}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <!-- Back -->
+    <div class="flex gap-4 items-start">
+      <a
+        href="/ds_ai_portfolio/#projekty"
+        class="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
+      >
+        ← Wróć do projektów
+      </a>
+    </div>
+  </div>
+</ProjectLayout>

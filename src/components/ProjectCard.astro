@@ -38,29 +38,20 @@ const { project } = Astro.props;
       ))}
     </div>
 
-    {project.status && (
-      <p class="text-xs text-gray-500 mb-4">
-        📦 {project.status}
-      </p>
+    {(project.status || project.date) && (
+      <div class="text-xs text-gray-500 mb-4 space-y-1">
+        {project.status && <p>{project.status.includes('warsztacie') ? '🔬' : '📦'} {project.status}</p>}
+        {project.date && <p set:html={`📅 ${project.date.replace(/\(planowany.*?\)/, '<span class="text-red-400">$&</span>')}`}></p>}
+      </div>
     )}
 
     <div class="flex gap-3 mt-auto pt-2">
       {project.page && (
         <a
           href={project.page}
-          class="inline-flex items-center gap-1.5 text-sm text-accent hover:text-accent-light transition-colors"
+          class="inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:text-accent-light transition-colors"
         >
           Zobacz szczegóły →
-        </a>
-      )}
-      {project.github && (
-        <a
-          href={project.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-white transition-colors"
-        >
-          GitHub ↗
         </a>
       )}
     </div>

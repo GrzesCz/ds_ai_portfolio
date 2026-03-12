@@ -1,0 +1,179 @@
+---
+import ProjectLayout from '../../layouts/ProjectLayout.astro';
+
+const metrics = [
+  { value: 'Kilka', label: 'departamentów GDDKiA', icon: '🏢' },
+  { value: 'Dziesiątki', label: 'aktywnych użytkowników', icon: '👥' },
+  { value: '100%', label: 'digitalizacja obiegu', icon: '📄' },
+  { value: '0', label: 'papierowych wniosków', icon: '♻️' },
+];
+
+const challenges = [
+  {
+    title: 'Problem',
+    description: 'Dokumentacja projektowa w GDDKiA była obsługiwana papierowo — wnioski krążyły między departamentami fizycznie, co generowało opóźnienia, gubienie dokumentów i brak przejrzystości statusu spraw.',
+    icon: '🔴',
+  },
+  {
+    title: 'Rozwiązanie',
+    description: 'Zaprojektowałem i wdrożyłem od zera aplikację webową KOPI, która zdigitalizowała cały obieg dokumentacji projektowej — od złożenia wniosku, przez akceptacje wielopoziomowe, po archiwizację.',
+    icon: '🟢',
+  },
+  {
+    title: 'Rezultat',
+    description: 'System wyeliminował papierowy obieg dokumentów, skrócił czas obsługi wniosków i zapewnił pełną transparentność procesu dla wszystkich zaangażowanych departamentów.',
+    icon: '🏆',
+  },
+];
+
+const features = [
+  'Elektroniczny obieg wniosków z wielopoziomową akceptacją',
+  'System powiadomień o statusie dokumentów',
+  'Zarządzanie rolami i uprawnieniami użytkowników',
+  'Historia zmian i pełna audytowalność procesów',
+  'Wyszukiwarka i filtrowanie dokumentacji',
+  'REST API umożliwiające integrację z innymi systemami',
+];
+
+const techDetails = [
+  { name: 'Backend', value: 'PHP' },
+  { name: 'Baza danych', value: 'MySQL' },
+  { name: 'Frontend', value: 'Bootstrap, CSS, JavaScript' },
+  { name: 'Autoryzacja', value: 'JWT + system ról' },
+  { name: 'Środowisko', value: 'Wewnętrzna infrastruktura GDDKiA' },
+  { name: 'Status', value: 'Produkcja' },
+];
+
+const roles = [
+  'Analiza wymagań biznesowych we współpracy z użytkownikami końcowymi',
+  'Projektowanie architektury systemu i modelu danych',
+  'Implementacja backendu i frontendu',
+  'Wdrożenie produkcyjne i szkolenie użytkowników',
+  'Bieżące utrzymanie i rozwój systemu',
+];
+---
+
+<ProjectLayout
+  title="System KOPI — Case Study"
+  description="Case study systemu KOPI: aplikacji webowej do elektronicznego obiegu dokumentacji projektowej w GDDKiA."
+>
+  <div class="max-w-6xl mx-auto px-4 py-12">
+    <!-- Breadcrumb -->
+    <nav class="mb-8 text-sm" aria-label="Breadcrumb">
+      <ol class="flex items-center gap-2 text-gray-500">
+        <li><a href="/ds_ai_portfolio/" class="hover:text-accent transition-colors">Strona główna</a></li>
+        <li>/</li>
+        <li><a href="/ds_ai_portfolio/#projekty" class="hover:text-accent transition-colors">Projekty</a></li>
+        <li>/</li>
+        <li class="text-gray-300">System KOPI</li>
+      </ol>
+    </nav>
+
+    <!-- Header -->
+    <div class="mb-12">
+      <div class="inline-block bg-blue-500 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider mb-4 shadow-lg shadow-blue-500/30">
+        Produkcja
+      </div>
+      <h1 class="text-4xl lg:text-5xl font-extrabold text-white mb-4">System KOPI</h1>
+      <p class="text-gray-400 text-lg max-w-3xl mb-6">
+        Aplikacja webowa do zarządzania elektronicznym obiegiem dokumentacji projektowej
+        dla Generalnej Dyrekcji Dróg Krajowych i Autostrad. Zaprojektowana i wdrożona
+        przeze mnie od koncepcji po system produkcyjny.
+      </p>
+      <div class="flex flex-wrap gap-2">
+        {['PHP', 'MySQL', 'Bootstrap', 'CSS', 'JavaScript'].map((tag) => (
+          <span class="px-3 py-1 text-xs bg-accent/10 text-accent-light rounded-md border border-accent/20">
+            {tag}
+          </span>
+        ))}
+      </div>
+    </div>
+
+    <!-- Metrics -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-5 mb-16">
+      {metrics.map((m) => (
+        <div class="bg-card border border-gray-800 rounded-xl p-5 text-center">
+          <div class="text-3xl mb-2">{m.icon}</div>
+          <div class="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-light">
+            {m.value}
+          </div>
+          <p class="text-gray-400 text-sm mt-1">{m.label}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Problem / Solution / Result -->
+    <div class="mb-16">
+      <h2 class="text-2xl font-bold text-white mb-6">Od problemu do rozwiązania</h2>
+      <div class="space-y-6">
+        {challenges.map((c) => (
+          <div class="bg-card border border-gray-800 rounded-xl p-6">
+            <div class="flex items-start gap-4">
+              <span class="text-2xl flex-shrink-0">{c.icon}</span>
+              <div>
+                <h3 class="text-white font-bold text-lg mb-2">{c.title}</h3>
+                <p class="text-gray-400 leading-relaxed">{c.description}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Features -->
+    <div class="mb-16">
+      <h2 class="text-2xl font-bold text-white mb-6">Kluczowe funkcjonalności</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {features.map((f) => (
+          <div class="flex items-start gap-3 bg-card border border-gray-800 rounded-lg p-4">
+            <span class="text-accent mt-0.5 flex-shrink-0">▸</span>
+            <span class="text-gray-300 text-sm">{f}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Tech Details -->
+    <div class="mb-16">
+      <h2 class="text-2xl font-bold text-white mb-6">Stack technologiczny</h2>
+      <div class="bg-card border border-gray-800 rounded-xl overflow-hidden">
+        <table class="w-full text-sm">
+          {techDetails.map((t, i) => (
+            <tr class={i % 2 === 0 ? 'bg-card' : 'bg-primary/30'}>
+              <td class="px-6 py-3 text-gray-500 font-medium w-1/3">{t.name}</td>
+              <td class="px-6 py-3 text-gray-300">{t.value}</td>
+            </tr>
+          ))}
+        </table>
+      </div>
+    </div>
+
+    <!-- My Role -->
+    <div class="mb-16">
+      <h2 class="text-2xl font-bold text-white mb-6">Moja rola</h2>
+      <div class="bg-card border border-gray-800 rounded-xl p-6">
+        <p class="text-gray-400 leading-relaxed mb-4">
+          Byłem <strong class="text-white">jedynym autorem i deweloperem</strong> systemu KOPI. Odpowiadałem za:
+        </p>
+        <ul class="space-y-3">
+          {roles.map((r) => (
+            <li class="text-gray-300 flex items-start gap-3">
+              <span class="text-emerald mt-1 flex-shrink-0">✓</span>
+              <span>{r}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <!-- Back -->
+    <div class="flex gap-4 items-start">
+      <a
+        href="/ds_ai_portfolio/#projekty"
+        class="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
+      >
+        ← Wróć do projektów
+      </a>
+    </div>
+  </div>
+</ProjectLayout>

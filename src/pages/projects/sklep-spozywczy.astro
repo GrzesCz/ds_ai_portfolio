@@ -1,0 +1,176 @@
+---
+import ProjectLayout from '../../layouts/ProjectLayout.astro';
+
+const metrics = [
+  { value: 'AI', label: 'prognoza sprzedaży', icon: '🤖' },
+  { value: 'Auto', label: 'listy do zamówienia', icon: '🛒' },
+  { value: '100%', label: 'przejrzystość danych', icon: '📈' },
+  { value: '24/7', label: 'dostępność analiz', icon: '📊' },
+];
+
+const challenges = [
+  {
+    title: 'Problem',
+    description: 'Właściciele sklepów spożywczych zmagali się z brakiem przejrzystości w danych sprzedażowych oraz trudnościami w przewidywaniu zapotrzebowania, co prowadziło do braków towarowych lub zamrażania kapitału w niesprzedających się produktach.',
+    icon: '🔴',
+  },
+  {
+    title: 'Rozwiązanie',
+    description: 'Zbudowanie interaktywnej aplikacji webowej (PHP, Bootstrap), która analizuje i wizualizuje historyczną sprzedaż asortymentu oraz wykorzystuje modele sztucznej inteligencji (OpenAI API) do generowania precyzyjnych prognoz. W kolejnym etapie planowana jest rozbudowa systemu o autonomicznych Agentów AI, którzy będą cyklicznie analizować dane i proaktywnie przygotowywać gotowe listy zakupowe.',
+    icon: '🟢',
+  },
+  {
+    title: 'Rezultat',
+    description: 'Użytkownicy zyskali potężne narzędzie wspierające decyzje biznesowe. Aplikacja optymalizuje koszty operacyjne, automatycznie podpowiadając, co i w jakiej ilości należy zamówić w najbliższym czasie.',
+    icon: '🏆',
+  },
+];
+
+const features = [
+  'Wizualizacja obrotów i trendów sprzedażowych poszczególnych produktów w czasie',
+  'Analiza rentowności asortymentu wspierająca podejmowanie decyzji biznesowych',
+  'Prognoza przyszłej sprzedaży produktów z wykorzystaniem modeli AI (LLM)',
+  'Automatyczne generowanie optymalnej listy produktów koniecznych do zamówienia',
+];
+
+const techDetails = [
+  { name: 'Języki programowania', value: 'PHP, JavaScript' },
+  { name: 'Baza danych', value: 'MySQL' },
+  { name: 'Frontend', value: 'Bootstrap, CSS' },
+  { name: 'Sztuczna inteligencja', value: 'OpenAI API, Machine Learning' },
+  { name: 'Inne', value: 'Analiza danych' },
+];
+
+const roles = [
+  'Analiza procesów zatowarowania w sklepach spożywczych',
+  'Przetwarzanie, czyszczenie i agregacja danych z kas fiskalnych / bazy',
+  'Wdrożenie modeli sztucznej inteligencji z wykorzystaniem API OpenAI',
+  'Zaprojektowanie i implementacja interfejsu graficznego w oparciu o Bootstrap, CSS i JavaScript',
+  'Opracowanie logiki generującej zautomatyzowane raporty dla zamówień',
+];
+---
+
+<ProjectLayout
+  title="Pomocnik dla sklepu spożywczego — Case Study"
+  description="Aplikacja analityczna dla sklepów: prognozowanie sprzedaży AI, analiza danych, automatyczne zamówienia."
+>
+  <div class="max-w-6xl mx-auto px-4 py-12">
+    <!-- Breadcrumb -->
+    <nav class="mb-8 text-sm" aria-label="Breadcrumb">
+      <ol class="flex items-center gap-2 text-gray-500">
+        <li><a href="/ds_ai_portfolio/" class="hover:text-accent transition-colors">Strona główna</a></li>
+        <li>/</li>
+        <li><a href="/ds_ai_portfolio/#projekty" class="hover:text-accent transition-colors">Projekty</a></li>
+        <li>/</li>
+        <li class="text-gray-300">Pomocnik dla sklepu spożywczego</li>
+      </ol>
+    </nav>
+
+    <!-- Header -->
+    <div class="mb-12">
+      <div class="inline-block bg-blue-500 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider mb-4 shadow-lg shadow-blue-500/30">
+        Produkcja
+      </div>
+      <h1 class="text-4xl lg:text-5xl font-extrabold text-white mb-4">Pomocnik dla sklepu spożywczego</h1>
+      <p class="text-gray-400 text-lg max-w-3xl mb-6">
+        Interaktywna aplikacja webowa stworzona do analizy i wizualizacji danych asortymentowych. 
+        Projekt łączy przetwarzanie danych w bazie MySQL z modelami AI (OpenAI API), 
+        aby optymalizować zarządzanie towarem w sklepach spożywczych.
+      </p>
+      <div class="flex flex-wrap gap-2">
+        {['PHP', 'MySQL', 'Bootstrap', 'CSS', 'JavaScript', 'OpenAI API', 'Machine Learning', 'Analiza danych'].map((tag) => (
+          <span class="px-3 py-1 text-xs bg-accent/10 text-accent-light rounded-md border border-accent/20">
+            {tag}
+          </span>
+        ))}
+      </div>
+    </div>
+
+    <!-- Metrics -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-5 mb-16">
+      {metrics.map((m) => (
+        <div class="bg-card border border-gray-800 rounded-xl p-5 text-center">
+          <div class="text-3xl mb-2">{m.icon}</div>
+          <div class="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-light">
+            {m.value}
+          </div>
+          <p class="text-gray-400 text-sm mt-1">{m.label}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Problem / Solution / Result -->
+    <div class="mb-16">
+      <h2 class="text-2xl font-bold text-white mb-6">Od problemu do rozwiązania</h2>
+      <div class="space-y-6">
+        {challenges.map((c) => (
+          <div class="bg-card border border-gray-800 rounded-xl p-6">
+            <div class="flex items-start gap-4">
+              <span class="text-2xl flex-shrink-0">{c.icon}</span>
+              <div>
+                <h3 class="text-white font-bold text-lg mb-2">{c.title}</h3>
+                <p class="text-gray-400 leading-relaxed">{c.description}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Features -->
+    <div class="mb-16">
+      <h2 class="text-2xl font-bold text-white mb-6">Kluczowe funkcjonalności</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {features.map((f) => (
+          <div class="flex items-start gap-3 bg-card border border-gray-800 rounded-lg p-4">
+            <span class="text-accent mt-0.5 flex-shrink-0">▸</span>
+            <span class="text-gray-300 text-sm">{f}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Tech Details -->
+    <div class="mb-16">
+      <h2 class="text-2xl font-bold text-white mb-6">Stack technologiczny</h2>
+      <div class="bg-card border border-gray-800 rounded-xl overflow-hidden">
+        <table class="w-full text-sm">
+          {techDetails.map((t, i) => (
+            <tr class={i % 2 === 0 ? 'bg-card' : 'bg-primary/30'}>
+              <td class="px-6 py-3 text-gray-500 font-medium w-1/3">{t.name}</td>
+              <td class="px-6 py-3 text-gray-300">{t.value}</td>
+            </tr>
+          ))}
+        </table>
+      </div>
+    </div>
+
+    <!-- My Role -->
+    <div class="mb-16">
+      <h2 class="text-2xl font-bold text-white mb-6">Moja rola</h2>
+      <div class="bg-card border border-gray-800 rounded-xl p-6">
+        <p class="text-gray-400 leading-relaxed mb-4">
+          Byłem <strong class="text-white">wyłącznym autorem</strong> całego narzędzia, odpowiadając m.in. za:
+        </p>
+        <ul class="space-y-3">
+          {roles.map((r) => (
+            <li class="text-gray-300 flex items-start gap-3">
+              <span class="text-emerald mt-1 flex-shrink-0">✓</span>
+              <span>{r}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <!-- Back -->
+    <div class="flex gap-4 items-start">
+      <a
+        href="/ds_ai_portfolio/#projekty"
+        class="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
+      >
+        ← Wróć do projektów
+      </a>
+    </div>
+  </div>
+</ProjectLayout>
