@@ -118,12 +118,12 @@ export const labProjects: Project[] = [
     slug: 'flyer-engine',
     title: 'FlyerEngine',
     description:
-      'Zautomatyzowany system DTP do generowania gazetek promocyjnych, który stworzyłem z wykorzystaniem zaawansowanych technik Vibe Engineering.',
+      'Hybrydowy system zasilany przez AI do zautomatyzowanego generowania i składania gazetek promocyjnych, który stworzyłem z wykorzystaniem zaawansowanych technik Vibe Engineering.',
     longDescription:
-      'Aplikacja do automatycznego przygotowywania cotygodniowych gazetek promocyjnych gotowych do druku offsetowego (TIFF, 300 DPI). Projekt jest rozwijany w nowoczesnym podejściu Vibe Engineering z użyciem Agentów AI. Proces opiera się na pełnej kontroli nad generowanym kodem, dbaniu o jego wysoką jakość oraz tworzeniu i wykorzystaniu własnych, dedykowanych szablonów deweloperskich i skilli (skills). Taka metodyka pozwala na drastyczne skrócenie czasu developmentu przy zachowaniu standardów inżynierskich.',
+      'Innowacyjna aplikacja łącząca klasyczny backend DTP (generujący pliki TIFF 300 DPI gotowe do druku) z potężną mocą Sztucznej Inteligencji (LLM). Oprócz tworzenia kodu z asystentami w metodyce Vibe Engineering, z sukcesem wplatałem modele AI w samą logikę biznesową systemu — AI automatycznie kategoryzuje produkty, parsze skomplikowane dane i odciąża operatorów z powtarzalnych procesów. Projekt ten doskonale odzwierciedla moją największą przewagę: potrafię płynnie wprowadzić nowoczesną Sztuczną Inteligencję do tradycyjnego świata IT i rozwiązać w ten sposób realne bolączki biznesowe.',
     stack: ['Python', 'PostgreSQL', 'Vibe Engineering', 'Agentic AI', 'Pytest', 'GitHub Actions'],
     impact:
-      'Automatyzacja składu DTP, wdrożenie innowacyjnych metod wytwarzania oprogramowania we współpracy z AI',
+      'Zintegrowanie AI w rdzenną architekturę backendową, zautomatyzowanie składu DTP i wdrożenie Agentic AI w cyklu produkcyjnym kodu',
     status: 'W warsztacie (R&D)',
     page: '/ds_ai_portfolio/projects/flyer-engine',
   },

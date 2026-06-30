@@ -11,18 +11,18 @@ const metrics = [
 const challenges = [
   {
     title: 'Problem',
-    description: 'Właściciel sklepu spożywczego (dla którego wcześniej stworzyłem system kadrowy) potrzebował narzędzia do automatyzacji tworzenia tygodniowych gazetek promocyjnych. Ręczne przygotowywanie plików do druku przez grafika było czasochłonne, kosztowne i podatne na błędy przy częstych zmianach cen.',
+    description: 'Tradycyjny skład gazetek promocyjnych to proces żmudny, drogi i podatny na ludzkie pomyłki przy wycenie i opisywaniu dziesiątek produktów. Zwykła, sztywna automatyzacja to za mało, kiedy potrzebne jest "inteligentne" odczytywanie, analizowanie i przypisywanie asortymentu z ogromnej i chaotycznej bazy towarów klienta.',
     icon: '📋',
   },
   {
-    title: 'Rozwiązanie',
-    description: 'Budowa backendu FlyerEngine. System pozwoli na tworzenie szablonów gazetek i łatwe przypisywanie do nich produktów z bazy. Głównym zadaniem aplikacji jest automatyczne generowanie ciężkich plików graficznych (TIFF) spełniających rygorystyczne parametry drukarni offsetowej (300 DPI, format A3 ze spadami, profil barw sRGB).',
-    icon: '🟢',
+    title: 'Rozwiązanie: Hybrydowa Architektura AI',
+    description: 'Zbudowałem innowacyjny silnik FlyerEngine. Z jednej strony to twardy backend DTP, który bezbłędnie generuje wielkie pliki do druku offsetowego (TIFF, A3 ze spadami). Z drugiej — inteligentny system na bieżąco zintegrowany z modelami AI (LLM), które pełnią funkcję "cyfrowego pracownika", wspierając operatora w parsowaniu i strukturyzowaniu danych wejściowych.',
+    icon: '🧠',
   },
   {
-    title: 'Obecny status i Vibe Engineering',
-    description: 'Projekt jest w trakcie tworzenia przy użyciu innowacyjnej metodyki Vibe Engineering (Agentic AI). Gwarantuje to pełną kontrolę nad procesem tworzenia kodu oraz jego dojrzałe i bezpieczne generowanie. Nacisk kładziony jest na dbanie o najwyższą jakość architektury oraz tworzenie własnych zestawów umiejętności (skills) dla modeli językowych.',
-    icon: '🛠️',
+    title: 'Moja Przewaga: AI na dwóch frontach',
+    description: 'Jako programista w tym projekcie operuję na dwóch płaszczyznach AI. Po pierwsze: osadzam zaawansowane modele sztucznej inteligencji prosto w kodzie produkcyjnym klienta. Po drugie: cały kod i architekturę wytwarzam wykorzystując innowacyjną metodykę Vibe Engineering (Agentic AI), programując m.in. własne "skille" dla moich asystentów, co wznosi tempo mojej pracy na zupełnie nowy, nieosiągalny wcześniej poziom.',
+    icon: '🚀',
   },
 ];
 
@@ -58,11 +58,11 @@ const techDetails = [
 ];
 
 const roles = [
-  'Zebrałem wymagania od klienta i przełożyłem je na konkretną specyfikację techniczną',
-  'Zaprojektowałem architekturę aplikacji backendowej (z naciskiem na łatwość testowania i rozwoju)',
-  'Zaimplementowałem dostęp do bazy danych PostgreSQL (przy użyciu pypika i psycopg3 zamiast dużego ORMa)',
-  'Rozwijałem aplikację zgodnie z podejściem TDD (Test-Driven Development) i skonfigurowałem CI/CD (GitHub Actions)',
-  'Nadzorowałem i orkiestrowałem procesy generowania kodu przez sztuczną inteligencję (Vibe Engineering)',
+  'Zebrałem wymagania od klienta i zaprojektowałem architekturę hybrydową (łączącą modele AI z tradycyjnym backendem renderingu plików wielkoformatowych)',
+  'Zintegrowałem silniki sztucznej inteligencji (LLM) z rdzeniem aplikacji, by automatyzować proces kategoryzacji i dopasowywania produktów',
+  'Zaimplementowałem bez-ORM-owy, wysokowydajny dostęp do bazy danych PostgreSQL (pypika i psycopg3)',
+  'Rozwijałem aplikację zgodnie z najlepszymi praktykami TDD (Test-Driven Development) i połączyłem je z potokami CI/CD w chmurze (GitHub Actions)',
+  'Nadzorowałem pracę potężnych Agentów AI, orkiestrując proces generowania kodu dzięki zastosowaniu metodyki Vibe Engineering i precyzyjnie napisanych promptów systemowych',
 ];
 
 const plannedItems = [
@@ -95,11 +95,9 @@ const plannedItems = [
       <div class="inline-block bg-purple-600 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider mb-4 shadow-lg shadow-purple-600/30">
         W warsztacie (R&D)
       </div>
-      <h1 class="text-4xl lg:text-5xl font-extrabold text-white mb-4">FlyerEngine</h1>
+      <h1 class="text-4xl lg:text-5xl font-extrabold text-white mb-4">FlyerEngine (AI-Powered DTP)</h1>
       <p class="text-gray-400 text-lg max-w-3xl mb-6">
-        Dedykowany silnik backendowy do skalowalnej automatyzacji składu DTP. Narzędzie, które stworzyłem jako odpowiedź na realne potrzeby branży retail, 
-        pozwala na zautomatyzowane budowanie gazetek promocyjnych z wykorzystaniem elastycznych szablonów i bezbłędnie generuje ciężkie pliki graficzne 
-        wymagane przez drukarnie offsetowe. Projekt tworzony zgodnie z rygorystycznymi standardami metodyki Vibe Engineering.
+        Silnik backendowy łączący siłową automatyzację składu DTP z inteligencją modeli AI (LLM). Projekt ewoluował od klasycznego generatora grafik promocyjnych do pełnoprawnego, inteligentnego ekosystemu. Zastosowana w nim sztuczna inteligencja m.in. wspiera parsowanie surowych cenników oraz optymalizuje przypinanie asortymentu do szablonów, na końcu wypluwając natywne, ciężkie pliki wprost na maszyny offsetowe w drukarni.
       </p>
       <div class="flex flex-wrap gap-2">
         {['Python', 'PostgreSQL', 'Vibe Engineering', 'Agentic AI', 'Pytest'].map((tag) => (
