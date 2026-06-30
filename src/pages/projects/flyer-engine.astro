@@ -20,8 +20,8 @@ const challenges = [
     icon: '🟢',
   },
   {
-    title: 'Obecny status',
-    description: 'Projekt jest w trakcie tworzenia. Zbudowałem już solidne fundamenty (konfiguracja, baza danych, testy). Kolejnym etapem jest implementacja logiki generowania grafiki i wystawienie endpointów API.',
+    title: 'Obecny status i Vibe Engineering',
+    description: 'Projekt jest w trakcie tworzenia przy użyciu innowacyjnej metodyki Vibe Engineering (Agentic AI). Gwarantuje to pełną kontrolę nad procesem tworzenia kodu oraz jego dojrzałe i bezpieczne generowanie. Nacisk kładziony jest na dbanie o najwyższą jakość architektury oraz tworzenie własnych zestawów umiejętności (skills) dla modeli językowych.',
     icon: '🛠️',
   },
 ];
@@ -33,6 +33,8 @@ const completedItems = [
   'Zaprojektowanie generycznych, reużywalnych modeli danych (m.in. ujednolicona paginacja i obsługa błędów)',
   'Skonfigurowanie kompleksowego środowiska testowego (Pytest) z automatyzacją CI/CD (GitHub Actions)',
   'Przygotowanie pełnej specyfikacji technicznej i założeń architektonicznych pod dalszy rozwój',
+  'Opracowanie własnych, dedykowanych szablonów (AI Templates) standaryzujących pracę z Agentami AI',
+  'Stworzenie niestandardowych "skills" (np. dla narzędzia Claude Code) gwarantujących wysoką jakość generowanego kodu',
 ];
 
 const features = [
@@ -50,25 +52,25 @@ const techDetails = [
   { name: 'Baza danych', value: 'PostgreSQL (pypika + psycopg3, bez ORM)' },
   { name: 'Walidacja i config', value: 'Pydantic, pydantic-settings' },
   { name: 'Testowanie', value: 'Pytest, pytest-mock' },
-  { name: 'CI', value: 'GitHub Actions' },
+  { name: 'AI & Code Gen', value: 'Vibe Engineering, Claude Code, Custom Skills' },
   { name: 'Status', value: 'W warsztacie (R&D)' },
   { name: 'Planowane', value: 'FastAPI, Wand (ImageMagick), S3, kolejka zadań' },
 ];
 
 const roles = [
-  'Zebranie wymagań od klienta i przełożenie ich na konkretną specyfikację techniczną',
-  'Zaprojektowanie architektury aplikacji backendowej (z naciskiem na łatwość testowania i rozwoju)',
-  'Implementacja dostępu do bazy danych PostgreSQL (przy użyciu pypika i psycopg3 zamiast dużego ORMa)',
-  'Rozwój aplikacji zgodnie z podejściem TDD (Test-Driven Development) i konfiguracja CI/CD (GitHub Actions)',
-  'Aktualne prace nad modułem generującym pliki graficzne przy pomocy biblioteki ImageMagick',
+  'Zebrałem wymagania od klienta i przełożyłem je na konkretną specyfikację techniczną',
+  'Zaprojektowałem architekturę aplikacji backendowej (z naciskiem na łatwość testowania i rozwoju)',
+  'Zaimplementowałem dostęp do bazy danych PostgreSQL (przy użyciu pypika i psycopg3 zamiast dużego ORMa)',
+  'Rozwijałem aplikację zgodnie z podejściem TDD (Test-Driven Development) i skonfigurowałem CI/CD (GitHub Actions)',
+  'Nadzorowałem i orkiestrowałem procesy generowania kodu przez sztuczną inteligencję (Vibe Engineering)',
 ];
 
 const plannedItems = [
-  'Zaprojektowanie pełnych kontekstów domenowych (m.in. produkty, kategorie, szablony, generowanie gazetek)',
-  'Wystawienie skalowalnego interfejsu REST API w oparciu o framework FastAPI',
-  'Opracowanie asynchronicznego silnika renderującego pliki TIFF z wykorzystaniem ImageMagick',
-  'Wdrożenie kolejki zadań do bezkolizyjnego generowania grafiki wielkoformatowej w tle',
-  'Integracja z architekturą chmurową S3 w celu bezpiecznego przechowywania plików wyjściowych',
+  'Zaprojektuję pełne konteksty domenowe (m.in. produkty, kategorie, szablony, generowanie gazetek)',
+  'Wystawię skalowalny interfejs REST API w oparciu o framework FastAPI',
+  'Opracuję asynchroniczny silnik renderujący pliki TIFF z wykorzystaniem ImageMagick',
+  'Wdrożę kolejkę zadań do bezkolizyjnego generowania grafiki wielkoformatowej w tle',
+  'Zintegruję system z architekturą chmurową S3 w celu bezpiecznego przechowywania plików wyjściowych',
 ];
 ---
 
@@ -95,12 +97,12 @@ const plannedItems = [
       </div>
       <h1 class="text-4xl lg:text-5xl font-extrabold text-white mb-4">FlyerEngine</h1>
       <p class="text-gray-400 text-lg max-w-3xl mb-6">
-        Dedykowany silnik backendowy do skalowalnej automatyzacji składu DTP. Narzędzie, stworzone jako odpowiedź na realne potrzeby branży retail, 
+        Dedykowany silnik backendowy do skalowalnej automatyzacji składu DTP. Narzędzie, które stworzyłem jako odpowiedź na realne potrzeby branży retail, 
         pozwala na zautomatyzowane budowanie gazetek promocyjnych z wykorzystaniem elastycznych szablonów i bezbłędnie generuje ciężkie pliki graficzne 
-        wymagane przez drukarnie offsetowe.
+        wymagane przez drukarnie offsetowe. Projekt tworzony zgodnie z rygorystycznymi standardami metodyki Vibe Engineering.
       </p>
       <div class="flex flex-wrap gap-2">
-        {['Python', 'PostgreSQL', 'pypika', 'psycopg3', 'Pydantic', 'Pytest'].map((tag) => (
+        {['Python', 'PostgreSQL', 'Vibe Engineering', 'Agentic AI', 'Pytest'].map((tag) => (
           <span class="px-3 py-1 text-xs bg-purple-500/10 text-purple-400 rounded-md border border-purple-500/20">
             {tag}
           </span>
@@ -139,9 +141,9 @@ const plannedItems = [
       </div>
     </div>
 
-    <!-- Co zostało zrobione -->
+    <!-- Co zrobiłem -->
     <div class="mb-16">
-      <h2 class="text-2xl font-bold text-white mb-6">Co zostało zrobione</h2>
+      <h2 class="text-2xl font-bold text-white mb-6">Co zrobiłem</h2>
       <div class="space-y-3">
         {completedItems.map((item) => (
           <div class="flex items-start gap-3 bg-card border border-gray-800 rounded-lg p-4">

@@ -11,6 +11,13 @@ export interface Certificate {
 
 export const certificates: Certificate[] = [
   {
+    name: 'The Complete Agentic AI Engineering Course',
+    institution: 'Udemy',
+    date: 'czerwiec 2026',
+    courseUrl: 'https://www.udemy.com/course/the-complete-agentic-ai-engineering-course/',
+    skills: ['Agentic AI', 'LLM', 'AI Agents'],
+  },
+  {
     name: 'Python w Excel: Analiza, wizualizacja i Machine Learning',
     institution: 'Udemy',
     date: 'październik 2025',

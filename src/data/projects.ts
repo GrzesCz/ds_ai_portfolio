@@ -64,7 +64,7 @@ export const projects: Project[] = [
     description:
     'Aplikacja webowa do zarządzania kadrami: grafiki zmianowe, listy płac, faktury, powiadomienia e-mail o terminach.',
     longDescription:
-    'System do zarządzania danymi zatrudnionych, ewidencji czasu pracy, organizacji grafików pracy zmianowej, list płac oraz faktur. Zaawansowane tworzenie grafików pracowniczych, automatyczne powiadomienia e-mail (koniec umowy, badania lekarskie, szkolenia BHP), generowanie list płac, informowanie o nieuregulowanych fakturach. Wdrożony na zewnętrznym serwerze komercyjnym.',
+    'System do zarządzania danymi zatrudnionych, ewidencji czasu pracy, organizacji grafików pracy zmianowej, list płac oraz faktur. Zaawansowane tworzenie grafików pracowniczych, automatyczne powiadomienia e-mail (koniec umowy, badania lekarskie, szkolenia BHP), generowanie list płac, informowanie o nieuregulowanych fakturach. Wdrożyłem go na zewnętrznym serwerze komercyjnym.',
     stack: ['PHP', 'MySQL', 'Bootstrap', 'CSS', 'JavaScript'],
     impact:
     'Centralizacja HR, automatyzacja powiadomień, eliminacja ręcznych grafików',
@@ -93,7 +93,7 @@ export const projects: Project[] = [
     description:
       'System do rejestracji pacjentów, prowadzenia dokumentacji medycznej oraz rozliczania wizyt.',
     longDescription:
-      'Aplikacja webowa do rejestracji pacjentów w gabinecie okulistycznym, prowadzenia dokumentacji medycznej oraz rozliczania wizyt. Wdrożona na prywatnym serwerze.',
+      'Aplikacja webowa do rejestracji pacjentów w gabinecie okulistycznym, prowadzenia dokumentacji medycznej oraz rozliczania wizyt. Wdrożyłem ją na prywatnym serwerze.',
     stack: ['PHP', 'MySQL', 'Bootstrap', 'CSS', 'JavaScript','Analiza danych'],
     impact:
       'Digitalizacja rejestracji i dokumentacji medycznej, automatyzacja rozliczeń',
@@ -101,6 +101,16 @@ export const projects: Project[] = [
     date: '2020 – do dziś (ciągły rozwój)',
     page: '/ds_ai_portfolio/projects/gabinet-okulistyczny',
   },
+  {
+    slug: 'fiszki-system',
+    title: 'System Fiszek Edukacyjnych',
+    description: 'Aplikacja webowa do efektywnej nauki (Spaced Repetition) ze zautomatyzowanym systemem przypomnień na Discord.',
+    longDescription: 'Aplikacja pozwalająca na efektywną naukę dzięki wdrożeniu algorytmu powtarzania w odstępach (Spaced Repetition). Projekt charakteryzuje się świetną wydajnością dzięki generowaniu statycznemu w Astro, bezpieczeństwem typów i zero JS po stronie klienta. Dodatkowo wzbogaciłem aplikację o automatyczne przypomnienia o nauce wysyłane bezpośrednio na serwer Discord przy użyciu bota.',
+    stack: ['Astro', 'TypeScript', 'Tailwind CSS', 'Discord API', 'Automatyzacja'],
+    impact: 'Eksploracja innowacyjnej architektury (Astro Islands), optymalizacja ładowania zasobów oraz budowa zautomatyzowanego kanału notyfikacji dla użytkowników.',
+    status: 'Zakończony',
+    page: '/ds_ai_portfolio/projects/fiszki-system',
+  }
 ];
 
 export const labProjects: Project[] = [
@@ -108,23 +118,26 @@ export const labProjects: Project[] = [
     slug: 'flyer-engine',
     title: 'FlyerEngine',
     description:
-      'Zautomatyzowany system do tworzenia gazetek promocyjnych. Umożliwia pracę na szablonach i generuje pliki gotowe do profesjonalnego druku.',
+      'Zautomatyzowany system DTP do generowania gazetek promocyjnych, który stworzyłem z wykorzystaniem zaawansowanych technik Vibe Engineering.',
     longDescription:
-      'Aplikacja powstała w odpowiedzi na realne zapotrzebowanie klienta z branży retail (sklep spożywczy). Jej celem jest drastyczne skrócenie czasu potrzebnego na przygotowanie cotygodniowych gazetek promocyjnych. System pozwala na definiowanie stałych szablonów graficznych, szybkie przypisywanie asortymentu wraz z cenami i automatyczne wygenerowanie plików TIFF o wysokiej rozdzielczości (300 DPI, A3), które są w pełni gotowe do druku offsetowego. Narzędzie automatyzuje pracę powtarzalną, zmniejsza koszty i eliminuje konieczność ręcznego przygotowania DTP.',
-    stack: ['Python', 'PostgreSQL', 'pypika', 'psycopg3', 'Pydantic', 'Pytest', 'GitHub Actions'],
+      'Aplikacja do automatycznego przygotowywania cotygodniowych gazetek promocyjnych gotowych do druku offsetowego (TIFF, 300 DPI). Projekt jest rozwijany w nowoczesnym podejściu Vibe Engineering z użyciem Agentów AI. Proces opiera się na pełnej kontroli nad generowanym kodem, dbaniu o jego wysoką jakość oraz tworzeniu i wykorzystaniu własnych, dedykowanych szablonów deweloperskich i skilli (skills). Taka metodyka pozwala na drastyczne skrócenie czasu developmentu przy zachowaniu standardów inżynierskich.',
+    stack: ['Python', 'PostgreSQL', 'Vibe Engineering', 'Agentic AI', 'Pytest', 'GitHub Actions'],
     impact:
-      'Automatyzacja składu DTP, oszczędność czasu, eliminacja błędów graficznych, pliki zgodne ze standardami drukarni',
+      'Automatyzacja składu DTP, wdrożenie innowacyjnych metod wytwarzania oprogramowania we współpracy z AI',
     status: 'W warsztacie (R&D)',
     page: '/ds_ai_portfolio/projects/flyer-engine',
   },
   {
-    slug: 'fiszki-system',
-    title: 'System Fiszek Edukacyjnych',
-    description: 'Aplikacja webowa do efektywnej nauki (Spaced Repetition). Eksperymentalny projekt budowany z naciskiem na ekstremalną wydajność i zero JS.',
-    longDescription: 'Projekt powstał jako laboratorium do eksploracji możliwości frameworka Astro i TypeScriptu w budowaniu błyskawicznie działających interfejsów webowych. Głównym założeniem jest stworzenie aplikacji pozwalającej na efektywną naukę dzięki wdrożeniu algorytmu powtarzania w odstępach (Spaced Repetition). Aplikacja ma charakteryzować się świetną wydajnością dzięki generowaniu statycznemu, pełnym bezpieczeństwem typów i nowoczesnym, minimalistycznym wyglądem.',
-    stack: ['Astro', 'TypeScript', 'Tailwind CSS', 'Nano Stores'],
-    impact: 'Eksploracja innowacyjnej architektury (Astro Islands), optymalizacja ładowania zasobów i budowa responsywnego UI',
+    slug: 'lens-system',
+    title: 'Lens System (AI Medical CRM)',
+    description:
+      'Nowoczesny system CRM dla gabinetów okulistycznych rozbudowany o funkcje Sztucznej Inteligencji (Voice-to-Text, Vision, SMS).',
+    longDescription:
+      'Gruntowna refaktoryzacja i przebudowa starszego systemu gabinetu przy użyciu nowoczesnego backendu opartego na Pythonie i FastAPI. Nowa architektura pozwala na głęboką integrację z usługami AI, umożliwiając m.in. głosowe uzupełnianie historii chorób przez lekarza (Speech-to-Text), automatyczną analizę wyników badań z załączonych zdjęć za pomocą Computer Vision oraz zautomatyzowany system komunikacji z pacjentami wysyłający przypomnienia SMS.',
+    stack: ['Python', 'FastAPI', 'OpenAI (Speech-to-Text)', 'Computer Vision', 'Twilio/SMS API'],
+    impact:
+      'Przyspieszenie pracy lekarzy dzięki dyktowaniu danych, automatyzacja diagnostyki, redukcja odwołanych wizyt dzięki notyfikacjom SMS',
     status: 'W warsztacie (R&D)',
-    page: '/ds_ai_portfolio/projects/fiszki-system',
+    page: '/ds_ai_portfolio/projects/lens-system',
   }
 ];

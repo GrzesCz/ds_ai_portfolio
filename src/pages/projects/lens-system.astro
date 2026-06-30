@@ -2,51 +2,57 @@
 import ProjectLayout from '../../layouts/ProjectLayout.astro';
 
 const metrics = [
-  { value: 'SSG', label: 'statyczne generowanie (Astro)', icon: '🚀' },
-  { value: 'Typy', label: 'pełne bezpieczeństwo (TS)', icon: '🛡️' },
-  { value: 'Discord', label: 'zautomatyzowane powiadomienia', icon: '🤖' },
-  { value: 'Gotowy', label: 'faza rozwoju', icon: '✅' },
+  { value: 'AI', label: 'rozpoznawanie mowy', icon: '🎙️' },
+  { value: 'Vision', label: 'analiza wyników ze zdjęć', icon: '👁️' },
+  { value: 'SMS', label: 'automatyczne powiadomienia', icon: '📱' },
+  { value: 'R&D', label: 'faza rozwoju', icon: '🏗️' },
 ];
 
 const challenges = [
   {
-    title: 'Założenia projektu',
-    description: 'Głównym celem było stworzenie bardzo szybkiej aplikacji edukacyjnej, która pomoże użytkownikom w efektywnej nauce dzięki wdrożeniu mechanizmu powtórek w odstępach (Spaced Repetition). Projekt posłużył jako pole do eksperymentów z architekturą statycznego generowania (SSG) w ekosystemie Astro oraz automatyzacją notyfikacji.',
-    icon: '🎯',
+    title: 'Geneza',
+    description: 'Stworzony przeze mnie wcześniej system dla gabinetu okulistycznego spełniał swoje podstawowe zadania, ale opierał się na starszym stacku technologicznym (PHP/MySQL). Pojawiła się potrzeba unowocześnienia i wdrożenia funkcji sztucznej inteligencji, aby jeszcze bardziej odciążyć lekarzy od pracy manualnej.',
+    icon: '💡',
   },
   {
-    title: 'Rezultat i Automatyzacja',
-    description: 'Ukończyłem i pomyślnie wdrożyłem aplikację. Zbudowałem solidną bazę frontendową (TypeScript, Tailwind) oraz zintegrowałem system z API Discorda. Dzięki temu użytkownicy otrzymują zautomatyzowane przypomnienia o nadchodzących sesjach nauki, co znacząco zwiększa regularność powtórek.',
-    icon: '🏆',
+    title: 'Transformacja',
+    description: 'Lens-System to gruntowna refaktoryzacja i przebudowa całego oprogramowania od zera. Nowy backend oparty na Pythonie i FastAPI pozwala na płynną integrację z zewnętrznymi API i modelami uczenia maszynowego. Kod generowany jest przy wsparciu narzędzi AI, co drastycznie skraca czas developmentu.',
+    icon: '⚙️',
+  },
+  {
+    title: 'Sztuczna Inteligencja w praktyce',
+    description: 'Wprowadzamy asystentów AI: zamianę mowy na tekst (lekarz dyktuje diagnozę), analizę wyników badań z aparatury medycznej na podstawie zdjęć (Computer Vision) oraz inteligentny system zarządzania kolejką pacjentów z notyfikacjami SMS.',
+    icon: '🤖',
   },
 ];
 
 const features = [
-  'Przeglądanie i nauka z wykorzystaniem interaktywnych wirtualnych fiszek',
-  'Wbudowany algorytm optymalizacji powtórek (Spaced Repetition)',
-  'Ekstremalna szybkość ładowania dzięki frameworkowi Astro',
-  'Automatyczne wysyłanie przypomnień o powtórkach na serwer Discord',
+  'Głosowe uzupełnianie historii chorób (Speech-to-Text)',
+  'Automatyczna ekstrakcja danych z obrazów aparatury medycznej (Computer Vision)',
+  'Zautomatyzowany system powiadomień SMS dla pacjentów (redukcja odwołanych wizyt)',
+  'Nowoczesny, asynchroniczny backend w Pythonie (FastAPI)',
+  'Skalowalna architektura mikroserwisowa gotowa na kolejne moduły AI',
 ];
 
 const techDetails = [
-  { name: 'Framework', value: 'Astro' },
-  { name: 'Język', value: 'TypeScript' },
-  { name: 'Integracje', value: 'Discord API' },
-  { name: 'Stan', value: 'Nano Stores / LocalStorage' },
-  { name: 'Status', value: 'Zakończony' },
+  { name: 'Backend', value: 'Python, FastAPI' },
+  { name: 'AI & Machine Learning', value: 'OpenAI API, Computer Vision' },
+  { name: 'Integracje', value: 'Twilio (SMS API)' },
+  { name: 'Baza Danych', value: 'PostgreSQL, SQLAlchemy' },
+  { name: 'Status', value: 'W warsztacie (R&D)' },
 ];
 
 const roles = [
-  'Projektowanie interfejsu użytkownika z myślą o wygodzie, minimalizmie i dostępności',
-  'Implementacja logiki aplikacji oraz algorytmu powtórek w TypeScript',
-  'Zarządzanie stanem aplikacji na frontendzie (Nano Stores) i lokalnym przechowywaniem danych',
-  'Optymalizacja wydajności strony (tzw. architektura Islands w Astro)',
+  'Kompleksowa przebudowa architektury ze starszego języka PHP na nowoczesny Python',
+  'Integracja z modelami AI do przetwarzania głosu i obrazu (Speech-to-Text, Vision)',
+  'Integracja zewnętrznych API do obsługi komunikacji z pacjentami (SMS)',
+  'Wytwarzanie kodu przy pomocy asystentów programistycznych (Agentic AI)',
 ];
 ---
 
 <ProjectLayout
-  title="System Fiszek Edukacyjnych — Laboratorium Innowacji"
-  description="Platforma webowa do nauki z wykorzystaniem fiszek i algorytmu Spaced Repetition. Budowana w Astro i TypeScript."
+  title="Lens System — AI Medical CRM"
+  description="Nowoczesny system CRM dla gabinetów okulistycznych rozbudowany o funkcje Sztucznej Inteligencji (Voice-to-Text, Vision, SMS)."
 >
   <div class="max-w-6xl mx-auto px-4 py-12">
     <!-- Breadcrumb -->
@@ -54,24 +60,25 @@ const roles = [
       <ol class="flex items-center gap-2 text-gray-500">
         <li><a href="/ds_ai_portfolio/" class="hover:text-purple-400 transition-colors">Strona główna</a></li>
         <li>/</li>
-        <li><a href="/ds_ai_portfolio/#projekty" class="hover:text-purple-400 transition-colors">Projekty</a></li>
+        <li><a href="/ds_ai_portfolio/#laboratorium" class="hover:text-purple-400 transition-colors">Laboratorium</a></li>
         <li>/</li>
-        <li class="text-gray-300">System Fiszek Edukacyjnych</li>
+        <li class="text-gray-300">Lens System</li>
       </ol>
     </nav>
 
     <!-- Header -->
     <div class="mb-12">
       <div class="inline-block bg-purple-600 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider mb-4 shadow-lg shadow-purple-600/30">
-        Zakończony
+        W warsztacie (R&D)
       </div>
-      <h1 class="text-4xl lg:text-5xl font-extrabold text-white mb-4">System Fiszek Edukacyjnych</h1>
+      <h1 class="text-4xl lg:text-5xl font-extrabold text-white mb-4">Lens System (AI Medical CRM)</h1>
       <p class="text-gray-400 text-lg max-w-3xl mb-6">
-        Interaktywna platforma webowa, którą zaprojektowałem do optymalizacji procesu nauki. 
-        Projekt powstał jako miejsce do eksperymentowania z frameworkiem Astro i budowania niesamowicie szybkich interfejsów w TypeScript.
+        System CRM nowej generacji dla placówek medycznych. Stanowi ewolucję poprzedniego projektu "Gabinet Okulistyczny", 
+        wprowadzając potężne możliwości sztucznej inteligencji. Pozwala lekarzom dyktować diagnozy zamiast je wpisywać 
+        oraz automatycznie odczytuje wyniki badań ze zdjęć aparatury medycznej.
       </p>
       <div class="flex flex-wrap gap-2">
-        {['Astro', 'TypeScript', 'Tailwind CSS'].map((tag) => (
+        {['Python', 'FastAPI', 'OpenAI', 'Computer Vision', 'SMS API'].map((tag) => (
           <span class="px-3 py-1 text-xs bg-purple-500/10 text-purple-400 rounded-md border border-purple-500/20">
             {tag}
           </span>
@@ -92,9 +99,9 @@ const roles = [
       ))}
     </div>
 
-    <!-- Problem / Solution / Result -->
+    <!-- Zapotrzebowanie / Rozwiązanie / Status -->
     <div class="mb-16">
-      <h2 class="text-2xl font-bold text-white mb-6">O projekcie</h2>
+      <h2 class="text-2xl font-bold text-white mb-6">Wizja i przebudowa</h2>
       <div class="space-y-6">
         {challenges.map((c) => (
           <div class="bg-card border border-gray-800 rounded-xl p-6">
@@ -112,7 +119,7 @@ const roles = [
 
     <!-- Features -->
     <div class="mb-16">
-      <h2 class="text-2xl font-bold text-white mb-6">Co wdrożyłem</h2>
+      <h2 class="text-2xl font-bold text-white mb-6">Innowacyjne funkcjonalności AI</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         {features.map((f) => (
           <div class="flex items-start gap-3 bg-card border border-gray-800 rounded-lg p-4">
@@ -140,10 +147,10 @@ const roles = [
 
     <!-- My Role -->
     <div class="mb-16">
-      <h2 class="text-2xl font-bold text-white mb-6">Moja rola w projekcie</h2>
+      <h2 class="text-2xl font-bold text-white mb-6">Moja rola</h2>
       <div class="bg-card border border-gray-800 rounded-xl p-6">
         <p class="text-gray-400 leading-relaxed mb-4">
-          Projekt ten traktuję jako pole badawcze do eksperymentowania z nowymi technologiami i architekturami:
+          Jako główny inżynier odpowiadam za refaktoryzację systemu oraz wprowadzanie nowatorskich rozwiązań z zakresu AI:
         </p>
         <ul class="space-y-3">
           {roles.map((r) => (
@@ -159,10 +166,10 @@ const roles = [
     <!-- Back -->
     <div class="flex gap-4 items-start">
       <a
-        href="/ds_ai_portfolio/#projekty"
+        href="/ds_ai_portfolio/#laboratorium"
         class="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
       >
-        ← Wróć do sekcji Projektów
+        ← Wróć do sekcji Laboratorium
       </a>
     </div>
   </div>
