@@ -118,12 +118,12 @@ export const labProjects: Project[] = [
     slug: 'flyer-engine',
     title: 'FlyerEngine',
     description:
-      'Hybrydowy system zasilany przez AI do zautomatyzowanego generowania i składania gazetek promocyjnych, który stworzyłem z wykorzystaniem zaawansowanych technik Vibe Engineering.',
+      'System zasilany przez AI do zautomatyzowanego układania i generowania gazetek promocyjnych, skracający czas pracy z dni do minut.',
     longDescription:
-      'Innowacyjna aplikacja łącząca klasyczny backend DTP (generujący pliki TIFF 300 DPI gotowe do druku) z potężną mocą Sztucznej Inteligencji (LLM). Oprócz tworzenia kodu z asystentami w metodyce Vibe Engineering, z sukcesem wplatałem modele AI w samą logikę biznesową systemu — AI automatycznie kategoryzuje produkty, parsze skomplikowane dane i odciąża operatorów z powtarzalnych procesów. Projekt ten doskonale odzwierciedla moją największą przewagę: potrafię płynnie wprowadzić nowoczesną Sztuczną Inteligencję do tradycyjnego świata IT i rozwiązać w ten sposób realne bolączki biznesowe.',
+      'Zbudowałem aplikację, która całkowicie automatyzuje tworzenie cotygodniowych gazetek promocyjnych gotowych do druku (TIFF 300 DPI). To, co wyróżnia ten projekt, to wdrożenie Sztucznej Inteligencji bezpośrednio do działania systemu. AI samodzielnie odczytuje chaotyczne cenniki z Excela, przypisuje produkty do odpowiednich kategorii i dobiera szablony. Co więcej, sam kod programu stworzyłem przy ścisłej współpracy z asystentami programistycznymi (Agentic AI), co potwierdza moją zdolność do niezwykle sprawnego dostarczania zaawansowanych produktów.',
     stack: ['Python', 'PostgreSQL', 'Vibe Engineering', 'Agentic AI', 'Pytest', 'GitHub Actions'],
     impact:
-      'Zintegrowanie AI w rdzenną architekturę backendową, zautomatyzowanie składu DTP i wdrożenie Agentic AI w cyklu produkcyjnym kodu',
+      'Automatyzacja składu gazetek oraz skuteczne wdrożenie AI zarówno do procesów biznesowych jak i do wytwarzania samego oprogramowania.',
     status: 'W warsztacie (R&D)',
     page: '/ds_ai_portfolio/projects/flyer-engine',
   },
