@@ -2,10 +2,10 @@
 import ProjectLayout from '../../layouts/ProjectLayout.astro';
 
 const metrics = [
-  { value: '300', label: 'DPI (druk offsetowy)', icon: '🖨️' },
-  { value: 'A3', label: 'format gazetki', icon: '📄' },
-  { value: 'TIFF', label: 'PDF, JPG — eksport', icon: '📤' },
-  { value: 'R&D', label: 'faza rozwoju', icon: '🏗️' },
+  { value: 'PDF', label: 'automatyczny skład', icon: '🖨️' },
+  { value: 'A3/A4', label: 'formaty gazetek', icon: '📄' },
+  { value: 'S3', label: 'magazyn MinIO', icon: '📤' },
+  { value: 'PROD', label: 'wdrożono na VPS', icon: '🚀' },
 ];
 
 const challenges = [
@@ -27,34 +27,32 @@ const challenges = [
 ];
 
 const completedItems = [
-  'Skonfigurowanie bezpiecznego zarządzania środowiskiem deweloperskim (pydantic-settings) z walidacją',
-  'Implementacja warstwy dostępu do bazy danych z zarządzaniem pulą połączeń PostgreSQL',
-  'Wdrożenie wzorca Composition Root do czystego zarządzania zależnościami (Dependency Injection)',
-  'Zaprojektowanie generycznych, reużywalnych modeli danych (m.in. ujednolicona paginacja i obsługa błędów)',
-  'Skonfigurowanie kompleksowego środowiska testowego (Pytest) z automatyzacją CI/CD (GitHub Actions)',
-  'Przygotowanie pełnej specyfikacji technicznej i założeń architektonicznych pod dalszy rozwój',
+  'Wystawienie skalowalnego interfejsu REST API w oparciu o framework FastAPI',
+  'Stworzenie nowoczesnego interfejsu użytkownika przy użyciu React i Node.js (Vite)',
+  'Wdrożenie asynchronicznej kolejki zadań (Celery + Redis) do generowania grafik w tle',
+  'Zintegrowanie systemu z magazynem obiektowym S3 (MinIO) do przechowywania plików',
+  'Wdrożenie silnika renderującego Playwright do generowania gotowych plików PDF',
+  'Zakończona sukcesem migracja całej architektury na dedykowany serwer VPS w modelu Zero Downtime',
+  'Implementacja warstwy dostępu do bazy danych PostgreSQL (SQLAlchemy async + Alembic)',
   'Opracowanie własnych, dedykowanych szablonów (AI Templates) standaryzujących pracę z Agentami AI',
-  'Stworzenie niestandardowych "skills" (np. dla narzędzia Claude Code) gwarantujących wysoką jakość generowanego kodu',
 ];
 
 const features = [
-  'Zarządzanie bazą produktów i ich kategoriami',
-  'Tworzenie szablonów gazetek z wydzielonymi miejscami na produkty i automatycznym formatowaniem cen',
+  'Zarządzanie bazą produktów i ich kategoriami z walidacją AI',
+  'Tworzenie szablonów gazetek z wydzielonymi miejscami na produkty',
   'Szybkie komponowanie nowych gazetek przez przypisywanie produktów do szablonu',
-  'Opcja skopiowania układu całej gazetki na kolejny tydzień',
-  'Generowanie docelowych plików TIFF (300 DPI, A3) gotowych do wysłania do drukarni',
-  'Możliwość wyeksportowania grafiki również do PDF (na e-mail) i JPG (do social mediów)',
-  'Przetwarzanie i generowanie grafiki w tle (planowane zadania asynchroniczne)',
+  'Automatyczne renderowanie dokumentów PDF (A3, A4-8) przy pomocy silnika Playwright',
+  'Możliwość wyeksportowania grafiki do formatów rastrowych (m.in. TIFF dla drukarni)',
+  'Przetwarzanie i generowanie grafiki w tle z wykorzystaniem kolejki Celery i Redisa',
 ];
 
 const techDetails = [
-  { name: 'Język', value: 'Python 3.12+' },
-  { name: 'Baza danych', value: 'PostgreSQL (pypika + psycopg3, bez ORM)' },
-  { name: 'Walidacja i config', value: 'Pydantic, pydantic-settings' },
-  { name: 'Testowanie', value: 'Pytest, pytest-mock' },
+  { name: 'Frontend', value: 'React, Node.js (Vite)' },
+  { name: 'Backend', value: 'Python 3.12+, FastAPI, Celery' },
+  { name: 'Baza danych', value: 'PostgreSQL (SQLAlchemy async, Alembic)' },
+  { name: 'Architektura', value: 'MinIO (S3), Redis, Docker, Playwright' },
   { name: 'AI & Code Gen', value: 'Vibe Engineering, Claude Code, Custom Skills' },
-  { name: 'Status', value: 'W warsztacie (R&D)' },
-  { name: 'Planowane', value: 'FastAPI, Wand (ImageMagick), S3, kolejka zadań' },
+  { name: 'Status', value: 'Wdrożony na VPS (Produkcja)' },
 ];
 
 const roles = [
@@ -66,11 +64,9 @@ const roles = [
 ];
 
 const plannedItems = [
-  'Zaprojektuję pełne konteksty domenowe (m.in. produkty, kategorie, szablony, generowanie gazetek)',
-  'Wystawię skalowalny interfejs REST API w oparciu o framework FastAPI',
-  'Opracuję asynchroniczny silnik renderujący pliki TIFF z wykorzystaniem ImageMagick',
-  'Wdrożę kolejkę zadań do bezkolizyjnego generowania grafiki wielkoformatowej w tle',
-  'Zintegruję system z architekturą chmurową S3 w celu bezpiecznego przechowywania plików wyjściowych',
+  'Rozszerzenie kontekstów domenowych o zaawansowane reguły promocyjne i obsługę wielu cenników',
+  'Dalsza integracja zewnętrznych API z agentami AI (np. automatyczna aktualizacja cen ze źródeł zewnętrznych)',
+  'Rozwój mechanizmów drag & drop we frontendzie do w pełni wizualnego budowania gazetek',
 ];
 ---
 
@@ -92,15 +88,15 @@ const plannedItems = [
 
     <!-- Header -->
     <div class="mb-12">
-      <div class="inline-block bg-purple-600 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider mb-4 shadow-lg shadow-purple-600/30">
-        W warsztacie (R&D)
+      <div class="inline-block bg-green-600 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider mb-4 shadow-lg shadow-green-600/30">
+        Produkcja (Wdrożono na VPS)
       </div>
       <h1 class="text-4xl lg:text-5xl font-extrabold text-white mb-4">FlyerEngine (AI-Powered)</h1>
       <p class="text-gray-400 text-lg max-w-3xl mb-6">
         Zaawansowany system automatyzujący powtarzalny i żmudny skład gazetek promocyjnych. Projekt wyewoluował z prostego generatora grafik w inteligentne narzędzie wspierane przez Sztuczną Inteligencję. AI pomaga w analizie surowych cenników z Excela i automatycznie dopasowuje produkty do szablonów, na końcu generując duże pliki graficzne gotowe prosto do druku.
       </p>
       <div class="flex flex-wrap gap-2">
-        {['Python', 'PostgreSQL', 'Vibe Engineering', 'Agentic AI', 'Pytest'].map((tag) => (
+        {['React', 'FastAPI', 'Celery', 'PostgreSQL', 'Vibe Engineering', 'Agentic AI'].map((tag) => (
           <span class="px-3 py-1 text-xs bg-purple-500/10 text-purple-400 rounded-md border border-purple-500/20">
             {tag}
           </span>
@@ -167,7 +163,7 @@ const plannedItems = [
 
     <!-- Features -->
     <div class="mb-16">
-      <h2 class="text-2xl font-bold text-white mb-6">Kluczowe funkcjonalności (docelowe)</h2>
+      <h2 class="text-2xl font-bold text-white mb-6">Kluczowe funkcjonalności</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         {features.map((f) => (
           <div class="flex items-start gap-3 bg-card border border-gray-800 rounded-lg p-4">
