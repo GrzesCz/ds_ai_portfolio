@@ -3,7 +3,7 @@ import ProjectLayout from '../../layouts/ProjectLayout.astro';
 
 const metrics = [
   { value: 'PDF', label: 'automatyczny skład', icon: '🖨️' },
-  { value: 'A3/A4', label: 'formaty gazetek', icon: '📄' },
+  { value: 'A3', label: 'broszura i plakaty', icon: '📄' },
   { value: 'S3', label: 'magazyn MinIO', icon: '📤' },
   { value: 'PROD', label: 'wdrożono na VPS', icon: '🚀' },
 ];
@@ -11,68 +11,69 @@ const metrics = [
 const challenges = [
   {
     title: 'Problem',
-    description: 'Tradycyjne tworzenie gazetek promocyjnych przez grafika to proces powolny, drogi i podatny na błędy (zwłaszcza przy ciągłych zmianach cen). Zwykła automatyzacja to jednak za mało, by sprawnie wyłuskiwać i porządkować dziesiątki produktów z chaotycznych, surowych plików od klienta.',
+    description: 'Gazetka promocyjna wraca co dwa tygodnie, a razem z nią przepisywanie dziesiątek cen z systemu sprzedażowego sklepu do programu graficznego. Praca powolna, droga i podatna na błędy — przy każdej zmianie ceny robiona od nowa, mimo że układ strony pozostaje ten sam.',
     icon: '📋',
   },
   {
-    title: 'Rozwiązanie: AI w służbie automatyzacji',
-    description: 'Stworzyłem system FlyerEngine, który potrafi wygenerować gotowe pliki do profesjonalnego druku (TIFF, A3 ze spadami). Jego głównym atutem jest wdrożenie inteligentnych modeli AI. Działają one jak wirtualny asystent, który wyręcza człowieka w żmudnym analizowaniu cenników i układaniu ich w logiczną całość przed wygenerowaniem grafiki.',
-    icon: '🤖',
+    title: 'Rozwiązanie',
+    description: 'FlyerEngine bierze ceny prosto ze źródła — z pliku Excel, z bazy sklepu przez VPN albo z plików DBF pobieranych po SSH — i pamięta zdjęcia produktów po kodzie PLU, więc ten sam towar w kolejnej promocji ma zdjęcie od razu. Na wyjściu jest gotowy PDF: broszura A3 złożona w kolejności druku oraz plakaty A3 dla wybranych pozycji. Układ powstaje raz i pracuje przy każdej następnej gazetce.',
+    icon: '🖨️',
   },
   {
-    title: 'Współpraca z asystentami AI',
-    description: 'Ten projekt obrazuje moje praktyczne podejście do Sztucznej Inteligencji. AI wspiera system na dwóch płaszczyznach: z jednej strony odpowiada za analizę danych wewnątrz samej aplikacji (odciążając użytkowników), a z drugiej — cały proces powstawania kodu oparłem na ścisłej współpracy z Agentami AI, co pomogło mi zoptymalizować czas wdrożenia.',
-    icon: '🚀',
+    title: 'Sztuczna inteligencja: dwa konkretne miejsca',
+    description: 'AI pracuje tam, gdzie naprawdę oszczędza czas, i nie udaje, że robi więcej. W aplikacji dotyka wyłącznie zdjęć: wycina tło modelem u2net i przerabia zdjęcie referencyjne (Gemini albo GPT) — funkcja dla administratora. Drugim miejscem jest mój warsztat: cały kod powstawał we współpracy z agentami AI, według własnych szablonów, z testami i twardymi bramkami jakości przed każdym scaleniem.',
+    icon: '🤖',
   },
 ];
 
 const completedItems = [
   'Wystawienie skalowalnego interfejsu REST API w oparciu o framework FastAPI',
   'Stworzenie nowoczesnego interfejsu użytkownika przy użyciu React i Node.js (Vite)',
-  'Wdrożenie asynchronicznej kolejki zadań (Celery + Redis) do generowania grafik w tle',
+  'Wdrożenie asynchronicznej kolejki zadań (Celery + Redis) do generowania dokumentów w tle',
   'Zintegrowanie systemu z magazynem obiektowym S3 (MinIO) do przechowywania plików',
-  'Wdrożenie silnika renderującego Playwright do generowania gotowych plików PDF',
-  'Zakończona sukcesem migracja całej architektury na dedykowany serwer VPS w modelu Zero Downtime',
+  'Wdrożenie silnika renderującego Playwright oraz impozycji składającej strony A4 w arkusze A3',
+  'Migracja całej architektury na dedykowany serwer VPS z automatycznym wdrożeniem po zielonym CI',
   'Implementacja warstwy dostępu do bazy danych PostgreSQL (SQLAlchemy async + Alembic)',
+  'Rozliczanie kosztu wywołań AI w osobnym module, z przeliczeniem na złotówki po kursie NBP',
   'Opracowanie własnych, dedykowanych szablonów (AI Templates) standaryzujących pracę z Agentami AI',
 ];
 
 const features = [
-  'Zarządzanie bazą produktów i ich kategoriami z walidacją AI',
-  'Tworzenie szablonów gazetek z wydzielonymi miejscami na produkty',
-  'Szybkie komponowanie nowych gazetek przez przypisywanie produktów do szablonu',
-  'Automatyczne renderowanie dokumentów PDF (A3, A4-8) przy pomocy silnika Playwright',
-  'Możliwość wyeksportowania grafiki do formatów rastrowych (m.in. TIFF dla drukarni)',
-  'Przetwarzanie i generowanie grafiki w tle z wykorzystaniem kolejki Celery i Redisa',
+  'Baza produktów ze zdjęciami wiązanymi trwale po kodzie PLU — raz wgrane zdjęcie wraca w kolejnych gazetkach',
+  'Import cen trzema kanałami: plik Excel lub CSV, baza sklepu przez VPN, pliki DBF pobierane po SSH',
+  'Trzy szablony pierwszej strony i edytor układu: przeciąganie kafelków, przenoszenie rzędów, rozmiary kafelków',
+  'Automatyczne renderowanie dokumentów PDF silnikiem Playwright — strony logiczne A4 składane impozycją w arkusze A3',
+  'Plakaty A3 dla wybranych pozycji, generowane obok broszury z tych samych danych',
+  'Wycinanie tła ze zdjęć (u2net) i edycja zdjęcia referencyjnego przez AI — dla administratora',
 ];
 
 const techDetails = [
   { name: 'Frontend', value: 'React, Node.js (Vite)' },
   { name: 'Backend', value: 'Python 3.12+, FastAPI, Celery' },
-  { name: 'Baza danych', value: 'PostgreSQL (SQLAlchemy async, Alembic)' },
+  { name: 'Baza danych', value: 'PostgreSQL (SQLAlchemy async, psycopg3, Alembic)' },
   { name: 'Architektura', value: 'MinIO (S3), Redis, Docker, Playwright' },
   { name: 'AI & Code Gen', value: 'Vibe Engineering, Claude Code, Custom Skills' },
   { name: 'Status', value: 'Wdrożony na VPS (Produkcja)' },
 ];
 
 const roles = [
-  'Zebrałem wymagania od klienta i zaprojektowałem system, który łączy generowanie dużych plików graficznych z inteligentną analizą danych',
-  'Zintegrowałem sztuczną inteligencję z głównym silnikiem aplikacji, mocno automatyzując proces kategoryzacji i dopasowywania produktów',
-  'Zaimplementowałem wydajny i bezpieczny dostęp do bazy danych PostgreSQL (przy użyciu lekkich narzędzi pypika i psycopg3)',
-  'Rozwijałem aplikację w oparciu o testy (TDD) oraz automatyczne wdrażanie kodu w chmurze (GitHub Actions)',
-  'Kierowałem pracą Agentów AI w trakcie pisania kodu, co znacznie przyspieszyło rozwój architektury bez utraty jakości inżynierskiej',
+  'Zebrałem wymagania od klienta i zaprojektowałem system: od pobrania cen ze źródła sklepu po plik gotowy do druku',
+  'Zbudowałem warstwę renderującą (Playwright, szablony HTML/CSS) wraz z impozycją broszury w kolejności druku',
+  'Zaimplementowałem asynchroniczny dostęp do PostgreSQL (SQLAlchemy async, psycopg3) i migracje Alembic',
+  'Rozwijałem aplikację w oparciu o testy (TDD) oraz automatyczne wdrażanie kodu (GitHub Actions na VPS)',
+  'Kierowałem pracą Agentów AI w trakcie pisania kodu — z własnymi szablonami, bramkami jakości i recenzją każdej zmiany',
 ];
 
 const plannedItems = [
-  'Rozszerzenie kontekstów domenowych o zaawansowane reguły promocyjne i obsługę wielu cenników',
-  'Dalsza integracja zewnętrznych API z agentami AI (np. automatyczna aktualizacja cen ze źródeł zewnętrznych)',
-  'Rozwój mechanizmów drag & drop we frontendzie do w pełni wizualnego budowania gazetek',
+  'Ekran administratora do zarządzania nagłówkami gazetek i danymi sklepów',
+  'Obsługa wielu cenników i kolejne źródła danych obok Excela, VPN oraz SFTP',
+  'Przygotowanie pliku pod wymagania drukarni offsetowej: spady, znaczniki cięcia, CMYK i PDF/X',
 ];
 ---
 
 <ProjectLayout
   title="FlyerEngine — Laboratorium Innowacji"
-  description="Zautomatyzowany system do tworzenia i zarządzania gazetkami promocyjnymi. Generuje natywne pliki TIFF gotowe do druku offsetowego."
+  description="Zautomatyzowany system do składu gazetek promocyjnych: ceny wchodzą wprost z systemu sprzedażowego sklepu, na wyjściu jest broszura A3 w kolejności druku."
 >
   <div class="max-w-6xl mx-auto px-4 py-12">
     <!-- Breadcrumb -->
@@ -93,7 +94,7 @@ const plannedItems = [
       </div>
       <h1 class="text-4xl lg:text-5xl font-extrabold text-white mb-4">FlyerEngine (AI-Powered)</h1>
       <p class="text-gray-400 text-lg max-w-3xl mb-6">
-        Zaawansowany system automatyzujący powtarzalny i żmudny skład gazetek promocyjnych. Projekt wyewoluował z prostego generatora grafik w inteligentne narzędzie wspierane przez Sztuczną Inteligencję. AI pomaga w analizie surowych cenników z Excela i automatycznie dopasowuje produkty do szablonów, na końcu generując duże pliki graficzne gotowe prosto do druku.
+        Zaawansowany system automatyzujący powtarzalny i żmudny skład gazetek promocyjnych. Ceny wchodzą do gazetki wprost ze źródła — z pliku Excel, z bazy sklepu przez VPN albo z plików DBF pobieranych po SSH — a zdjęcia wracają po kodzie produktu z magazynu. Operator układa stronę na podglądzie, system składa broszurę A3 w kolejności druku i plakaty A3. Sztuczna inteligencja pracuje przy zdjęciach: wycina tło i przerabia zdjęcie referencyjne.
       </p>
       <div class="flex flex-wrap gap-2">
         {['React', 'FastAPI', 'Celery', 'PostgreSQL', 'Vibe Engineering', 'Agentic AI'].map((tag) => (
@@ -103,6 +104,24 @@ const plannedItems = [
         ))}
       </div>
     </div>
+
+    <!-- Pełny materiał o systemie -->
+    <a
+      href="/ds_ai_portfolio/projects/flyer-engine/prospekt/"
+      class="group block bg-card border border-purple-500/30 rounded-xl p-6 mb-16 hover:border-purple-400 transition-colors"
+    >
+      <div class="flex items-start justify-between gap-6">
+        <div>
+          <h2 class="text-xl font-bold text-white mb-2">Zobacz, jak to działa</h2>
+          <p class="text-gray-400 text-sm max-w-3xl">
+            Pełny materiał o systemie: skąd biorą się ceny i zdjęcia, jak powstaje układ
+            strony, co dostaje drukarnia. Prawdziwe wydruki z silnika i dwie animacje
+            pokazujące edytor układu.
+          </p>
+        </div>
+        <span class="text-purple-400 text-2xl group-hover:translate-x-1 transition-transform flex-shrink-0">→</span>
+      </div>
+    </a>
 
     <!-- Metrics -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-5 mb-16">
@@ -214,6 +233,12 @@ const plannedItems = [
         class="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
       >
         ← Wróć do sekcji Laboratorium
+      </a>
+      <a
+        href="/ds_ai_portfolio/projects/flyer-engine/prospekt/"
+        class="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors"
+      >
+        Pełny materiał o systemie →
       </a>
     </div>
   </div>
