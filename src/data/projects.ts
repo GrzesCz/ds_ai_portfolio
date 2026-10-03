@@ -33,10 +33,10 @@ export const projects: Project[] = [
     slug: 'flyer-engine',
     title: 'FlyerEngine',
     description:
-      'System do automatycznego składu gazetek promocyjnych: ceny z systemu sprzedażowego sklepu → układ strony → broszura A3 i plakaty gotowe do druku.',
+      'System do automatycznego składu gazetek promocyjnych: ceny z systemu sprzedażowego sklepu → układ strony → broszura A3 i plakaty w PDF.',
     longDescription:
-      'Zbudowałem aplikację, która automatyzuje skład cyklicznych gazetek promocyjnych. Ceny trafiają do gazetki prosto ze źródła — z pliku Excel, z bazy sklepu przez VPN albo z plików DBF pobieranych po SSH — a zdjęcia wracają po kodzie PLU z magazynu produktów. System składa broszurę A3 w kolejności druku oraz plakaty A3 w formacie PDF. Sztuczna inteligencja pracuje przy zdjęciach: wycina tło i przerabia zdjęcie referencyjne. Kod powstawał we współpracy z agentami AI, z testami i bramkami jakości przed każdym scaleniem. Aplikację wdrożyłem na serwerze VPS z automatycznym wdrożeniem po zielonym CI.',
-    stack: ['Python', 'FastAPI', 'Celery', 'PostgreSQL', 'React', 'Playwright', 'Pytest', 'GitHub Actions', 'Vibe Engineering', 'Agentic AI'],
+      'Zbudowałem aplikację, która automatyzuje skład cyklicznych gazetek promocyjnych. Ceny trafiają do gazetki prosto ze źródła — z pliku Excel, z bazy sklepu przez VPN albo z plików DBF pobieranych po SSH — a zdjęcia wracają po kodzie PLU z magazynu produktów. System składa broszurę A3 w kolejności druku oraz plakaty A3 w formacie PDF. Sztuczna inteligencja pracuje przy zdjęciach: wycina tło i przerabia zdjęcie referencyjne. Kod pisałem we współpracy z agentami AI, z testami i bramkami jakości przed każdym scaleniem. Aplikację wdrożyłem na serwerze VPS — każda zmiana trafia na produkcję automatycznie po zielonym CI.',
+    stack: ['Python', 'FastAPI', 'Celery', 'PostgreSQL', 'React', 'Playwright', 'Docker', 'Pytest', 'GitHub Actions', 'Vibe Engineering', 'Agentic AI'],
     impact:
       'Skład gazetki w 10 minut zamiast całego dnia, ceny bez ręcznego przepisywania, zdjęcia wgrane raz wracają w kolejnych wydaniach',
     status: 'Produkcja (serwer VPS)',

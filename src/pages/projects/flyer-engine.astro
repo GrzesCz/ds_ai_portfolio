@@ -21,21 +21,21 @@ const challenges = [
   },
   {
     title: 'Sztuczna inteligencja: dwa konkretne miejsca',
-    description: 'AI pracuje tam, gdzie naprawdę oszczędza czas, i nie udaje, że robi więcej. W aplikacji dotyka wyłącznie zdjęć: wycina tło modelem u2net i przerabia zdjęcie referencyjne (Gemini albo GPT) — funkcja dla administratora. Drugim miejscem jest mój warsztat: cały kod powstawał we współpracy z agentami AI, według własnych szablonów, z testami i twardymi bramkami jakości przed każdym scaleniem.',
+    description: 'AI pracuje tam, gdzie naprawdę oszczędza czas, i nie udaje, że robi więcej. W aplikacji dotyka wyłącznie zdjęć: wycina tło modelem u2net, a administrator może przerobić zdjęcie referencyjne (Gemini albo GPT). Drugim miejscem jest mój warsztat: cały kod powstawał we współpracy z agentami AI, według własnych szablonów, z testami i twardymi bramkami jakości przed każdym scaleniem.',
     icon: '🤖',
   },
 ];
 
 const completedItems = [
   'Wystawienie interfejsu REST API w oparciu o framework FastAPI',
-  'Stworzenie nowoczesnego interfejsu użytkownika przy użyciu React i TypeScript (Vite)',
+  'Stworzenie nowoczesnego interfejsu użytkownika przy użyciu Reacta i TypeScriptu (Vite)',
   'Wdrożenie asynchronicznej kolejki zadań (Celery + Redis) do generowania dokumentów w tle',
   'Zintegrowanie systemu z magazynem obiektowym S3 (MinIO) do przechowywania plików',
   'Wdrożenie silnika renderującego Playwright oraz impozycji składającej strony A4 w arkusze A3',
   'Migracja całej architektury na serwer VPS z automatycznym wdrożeniem po zielonym CI',
   'Implementacja warstwy dostępu do bazy danych PostgreSQL (SQLAlchemy async + Alembic)',
   'Rozliczanie kosztu wywołań AI w osobnym module, z przeliczeniem na złotówki po kursie NBP',
-  'Opracowanie własnych, dedykowanych szablonów (AI Templates) standaryzujących pracę z Agentami AI',
+  'Opracowanie własnych szablonów (AI Templates) standaryzujących pracę z agentami AI',
 ];
 
 const features = [
@@ -44,7 +44,7 @@ const features = [
   'Trzy szablony pierwszej strony i edytor układu: przeciąganie kafelków, przenoszenie rzędów, rozmiary kafelków',
   'Automatyczne renderowanie dokumentów PDF silnikiem Playwright — strony logiczne A4 składane impozycją w arkusze A3',
   'Plakaty A3 dla wybranych pozycji, generowane obok broszury z tych samych danych',
-  'Wycinanie tła ze zdjęć (u2net) i edycja zdjęcia referencyjnego przez AI — dla administratora',
+  'Wycinanie tła ze zdjęć (u2net) jednym kliknięciem, a dla administratora edycja zdjęcia referencyjnego przez AI (Gemini lub GPT)',
 ];
 
 const techDetails = [
@@ -61,12 +61,12 @@ const roles = [
   'Zbudowałem warstwę renderującą (Playwright, szablony HTML/CSS) wraz z impozycją broszury w kolejności druku',
   'Zaimplementowałem asynchroniczny dostęp do PostgreSQL (SQLAlchemy async, psycopg3) i migracje Alembic',
   'Rozwijałem aplikację w oparciu o testy (TDD) oraz automatyczne wdrażanie kodu (GitHub Actions na VPS)',
-  'Kierowałem pracą Agentów AI w trakcie pisania kodu — z własnymi szablonami, bramkami jakości i recenzją każdej zmiany',
+  'Kierowałem pracą agentów AI w trakcie pisania kodu — z własnymi szablonami, bramkami jakości i recenzją każdej zmiany',
 ];
 
 const plannedItems = [
   'Ekran administratora do zarządzania nagłówkami gazetek i danymi sklepów',
-  'Obsługa wielu cenników i kolejne źródła danych obok Excela, VPN oraz SFTP',
+  'Obsługa wielu cenników i kolejne źródła danych obok pliku Excel, bazy sklepu przez VPN i plików DBF po SSH',
   'Przygotowanie pliku pod wymagania drukarni offsetowej: spady, znaczniki cięcia, CMYK i PDF/X',
 ];
 ---
@@ -97,7 +97,7 @@ const plannedItems = [
         Zaawansowany system automatyzujący powtarzalny i żmudny skład gazetek promocyjnych. Ceny wchodzą do gazetki wprost ze źródła — z pliku Excel, z bazy sklepu przez VPN albo z plików DBF pobieranych po SSH — a zdjęcia wracają po kodzie produktu z magazynu. Operator układa stronę na podglądzie, system składa broszurę A3 w kolejności druku i plakaty A3. Sztuczna inteligencja pracuje przy zdjęciach: wycina tło i przerabia zdjęcie referencyjne.
       </p>
       <div class="flex flex-wrap gap-2">
-        {['React', 'FastAPI', 'Celery', 'PostgreSQL', 'Vibe Engineering', 'Agentic AI'].map((tag) => (
+        {['Python', 'FastAPI', 'Celery', 'PostgreSQL', 'React', 'Playwright', 'Docker', 'Pytest', 'GitHub Actions', 'Vibe Engineering', 'Agentic AI'].map((tag) => (
           <span class="px-3 py-1 text-xs bg-accent/10 text-accent-light rounded-md border border-accent/20">
             {tag}
           </span>
