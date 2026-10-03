@@ -30,6 +30,20 @@ export const projects: Project[] = [
     page: '/ds_ai_portfolio/projects/etl-rynek-pracy',
   },
   {
+    slug: 'flyer-engine',
+    title: 'FlyerEngine',
+    description:
+      'System do automatycznego składu gazetek promocyjnych: ceny z systemu sprzedażowego sklepu → układ strony → broszura A3 i plakaty w PDF.',
+    longDescription:
+      'Zbudowałem aplikację, która automatyzuje skład cyklicznych gazetek promocyjnych. Ceny trafiają do gazetki prosto ze źródła — z pliku Excel, z bazy sklepu przez VPN albo z plików DBF pobieranych po SSH — a zdjęcia wracają po kodzie PLU z magazynu produktów. System składa broszurę A3 w kolejności druku oraz plakaty A3 w formacie PDF. Sztuczna inteligencja pracuje przy zdjęciach: wycina tło i przerabia zdjęcie referencyjne. Kod pisałem we współpracy z agentami AI, z testami i bramkami jakości przed każdym scaleniem. Aplikację wdrożyłem na serwerze VPS — każda zmiana trafia na produkcję automatycznie po zielonym CI.',
+    stack: ['Python', 'FastAPI', 'Celery', 'PostgreSQL', 'React', 'Playwright', 'Docker', 'Pytest', 'GitHub Actions', 'Vibe Engineering', 'Agentic AI'],
+    impact:
+      'Skład gazetki w 10 minut zamiast całego dnia, ceny bez ręcznego przepisywania, zdjęcia wgrane raz wracają w kolejnych wydaniach',
+    status: 'Produkcja (serwer VPS)',
+    date: 'maj 2026 – do dziś (ciągły rozwój)',
+    page: '/ds_ai_portfolio/projects/flyer-engine',
+  },
+  {
     slug: 'payslipper',
     title: 'Employee Payslipper',
     description:
@@ -114,19 +128,6 @@ export const projects: Project[] = [
 ];
 
 export const labProjects: Project[] = [
-  {
-    slug: 'flyer-engine',
-    title: 'FlyerEngine',
-    description:
-      'System zasilany przez AI do zautomatyzowanego układania i generowania gazetek promocyjnych, skracający czas pracy z dni do minut.',
-    longDescription:
-      'Zbudowałem aplikację, która całkowicie automatyzuje tworzenie cotygodniowych gazetek promocyjnych gotowych do druku (TIFF 300 DPI). To, co wyróżnia ten projekt, to wdrożenie Sztucznej Inteligencji bezpośrednio do działania systemu. AI samodzielnie odczytuje chaotyczne cenniki z Excela, przypisuje produkty do odpowiednich kategorii i dobiera szablony. Co więcej, sam kod programu stworzyłem przy ścisłej współpracy z asystentami programistycznymi (Agentic AI), co potwierdza moją zdolność do niezwykle sprawnego dostarczania zaawansowanych produktów.',
-    stack: ['Python', 'PostgreSQL', 'Vibe Engineering', 'Agentic AI', 'Pytest', 'GitHub Actions'],
-    impact:
-      'Automatyzacja składu gazetek oraz skuteczne wdrożenie AI zarówno do procesów biznesowych jak i do wytwarzania samego oprogramowania.',
-    status: 'W warsztacie (R&D)',
-    page: '/ds_ai_portfolio/projects/flyer-engine',
-  },
   {
     slug: 'lens-system',
     title: 'Lens System (AI Medical CRM)',
