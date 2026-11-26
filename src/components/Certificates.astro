@@ -1,35 +1,10 @@
 ---
-import { certificates } from '../data/certificates';
+import { certificates, featuredCertificate as featured } from '../data/certificates';
 
-// Odznaki z certyfikatu 10xDevs 4.0 (19.11.2026); highlight wyróżnia Best Project.
-const tenxBadges = [
-  {
-    icon: '🚀',
-    name: '10xBuilder',
-    text: 'Projekt zaliczeniowy LENS Scribe dla kliniki okulistycznej: lekarz dyktuje wizytę, AI proponuje wypełnienie formularza, a lekarz je poprawia i zatwierdza. FastAPI, React, PostgreSQL, testy E2E w Playwright, CI/CD i wdrożenie produkcyjne.',
-  },
-  {
-    icon: '🔧',
-    name: '10xArchitect',
-    text: 'Raport architektoniczny z analizy repozytorium open source Langflow: mapa, analiza przepływu, plan refaktoryzacji i model domeny (DDD).',
-  },
-  {
-    icon: '🤖',
-    name: '10xChampion',
-    text: 'Własny agent do code review w pipelinie CI/CD, zbudowany na Claude Agent SDK w Pythonie: przy każdym pull requeście wystawia werdykt.',
-  },
-  {
-    icon: '⭐',
-    name: 'Best Project',
-    text: 'Wyróżnienie projektu zaliczeniowego za własny pomysł i jakość zgłoszenia.',
-    highlight: true,
-  },
-];
-
-const tenxLinks = [
-  { label: 'Certyfikat (PDF)', href: '/ds_ai_portfolio/certificates/10xdevs-4-certyfikat.pdf' },
-  { label: 'Post na LinkedIn', href: 'https://www.linkedin.com/feed/update/urn:li:activity:7529137833085648896/' },
-  { label: 'Zobacz kurs', href: 'https://www.10xdevs.pl/' },
+const featuredLinks = [
+  { label: 'Certyfikat (PDF)', href: featured.certificateUrl },
+  { label: 'Post na LinkedIn', href: featured.postUrl },
+  { label: 'Zobacz kurs', href: featured.courseUrl },
 ];
 ---
 
@@ -45,7 +20,7 @@ const tenxLinks = [
 
     <!-- Zakończone -->
     <div class="animate-on-scroll flex items-center justify-center gap-3 mb-8">
-      <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent text-xl">
+      <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent text-xl" aria-hidden="true">
         🎓
       </div>
       <h3 class="text-2xl font-bold text-white">Ukończone kursy</h3>
@@ -64,19 +39,19 @@ const tenxLinks = [
             <span aria-hidden="true" class="text-base leading-none">🏆</span>
             Ukończony z wyróżnieniem
           </span>
-          <span class="text-gray-400 text-xs">Certyfikat z 19.11.2026</span>
+          <span class="text-gray-400 text-xs">Certyfikat z {featured.date}</span>
         </div>
 
         <div class="relative grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
           <a
-            href="/ds_ai_portfolio/certificates/10xdevs-4-certyfikat.pdf"
+            href={featured.certificateUrl}
             target="_blank"
             rel="noopener noreferrer"
             class="lg:col-span-2 block group"
             aria-label="Otwórz certyfikat 10xDevs 4.0 (PDF)"
           >
             <img
-              src="/ds_ai_portfolio/certificates/10xdevs-4-certyfikat.webp"
+              src={featured.image}
               alt="Certyfikat ukończenia kursu 10xDevs 4.0 z odznakami 10xBuilder, 10xArchitect, 10xChampion i Best Project"
               width="1200"
               height="848"
@@ -87,9 +62,9 @@ const tenxLinks = [
 
           <div class="lg:col-span-3">
             <h4 id="cert-10xdevs-title" class="text-white font-bold text-2xl leading-tight">
-              10xDevs 4.0 — AI-Native Software Engineering
+              {featured.name}
             </h4>
-            <p class="text-gray-500 text-sm mt-1">Przeprogramowani · prowadzący: Przemek Smyrdek, Marcin Czarkowski</p>
+            <p class="text-gray-400 text-sm mt-1">{featured.institution} · prowadzący: {featured.instructors}</p>
             <p class="text-gray-300 text-sm leading-relaxed mt-4">
               Ukończyłem kurs z kompletem trzech odznak, a mój projekt zaliczeniowy dostał wyróżnienie
               <strong class="text-amber-300">Best Project</strong>. Wyróżnienia przyznawane są tylko zgłoszeniom
@@ -102,7 +77,7 @@ const tenxLinks = [
         </div>
 
         <ul class="relative grid grid-cols-1 md:grid-cols-2 gap-3 mt-8">
-          {tenxBadges.map((badge) => (
+          {featured.badges.map((badge) => (
             <li
               class={`rounded-xl border p-4 ${
                 badge.highlight
@@ -121,7 +96,7 @@ const tenxLinks = [
 
         <div class="relative flex flex-wrap items-center justify-between gap-x-6 gap-y-3 mt-6">
           <div class="flex flex-wrap gap-x-5 gap-y-2">
-            {tenxLinks.map((link) => (
+            {featuredLinks.map((link) => (
               <a
                 href={link.href}
                 target="_blank"
@@ -129,14 +104,14 @@ const tenxLinks = [
                 class="inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:text-accent-light transition-colors"
               >
                 {link.label}
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-3.5 h-3.5" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
               </a>
             ))}
           </div>
-          <p class="text-gray-500 text-xs break-all">
-            Nr certyfikatu: <span class="font-mono">8d5a2fca-8250-41a5-96f7-b45c976e923e</span>
+          <p class="text-gray-400 text-xs">
+            Nr certyfikatu: <span class="font-mono">{featured.certificateNo}</span>
           </p>
         </div>
       </div>
@@ -153,15 +128,15 @@ const tenxLinks = [
               {cert.logo ? (
                 <img src={cert.logo} alt={`Logo ${cert.institution}`} class="w-8 h-8 object-contain" />
               ) : (
-                <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-5 h-5 text-accent" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                 </svg>
               )}
             </div>
             <div class="flex-1 min-w-0">
-              <h3 class="text-white font-semibold text-sm leading-tight mb-1">
+              <h4 class="text-white font-semibold text-sm leading-tight mb-1">
                 {cert.name}
-              </h3>
+              </h4>
               <p class="text-gray-500 text-xs">{cert.institution}</p>
               <p class="text-accent text-xs mt-1">{cert.date}</p>
               {cert.skills && cert.skills.length > 0 && (
@@ -181,7 +156,7 @@ const tenxLinks = [
                       class="inline-flex items-center gap-1.5 text-xs text-accent hover:text-accent-light transition-colors"
                     >
                       Zobacz kurs
-                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg class="w-3.5 h-3.5" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                       </svg>
                     </a>
@@ -194,7 +169,7 @@ const tenxLinks = [
                       class="inline-flex items-center gap-1.5 text-xs text-accent hover:text-accent-light transition-colors"
                     >
                       Certyfikat
-                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg class="w-3.5 h-3.5" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                       </svg>
                     </a>
@@ -207,7 +182,7 @@ const tenxLinks = [
                       class="inline-flex items-center gap-1.5 text-xs text-accent hover:text-accent-light transition-colors"
                     >
                       Certyfikat
-                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg class="w-3.5 h-3.5" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                       </svg>
                     </a>
@@ -226,7 +201,7 @@ const tenxLinks = [
     <!-- Kursy w trakcie realizacji -->
     <div class="animate-on-scroll">
       <div class="flex items-center justify-center gap-3 mb-8">
-        <div class="w-10 h-10 rounded-lg bg-emerald/10 flex items-center justify-center text-emerald text-xl">
+        <div class="w-10 h-10 rounded-lg bg-emerald/10 flex items-center justify-center text-emerald text-xl" aria-hidden="true">
           🚀
         </div>
         <h3 class="text-2xl font-bold text-white">Kursy w trakcie realizacji</h3>
@@ -253,7 +228,7 @@ const tenxLinks = [
               class="inline-flex items-center gap-1.5 text-xs text-accent hover:text-accent-light transition-colors"
             >
               Zobacz kurs
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-3.5 h-3.5" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>
             </a>
